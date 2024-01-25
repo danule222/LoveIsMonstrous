@@ -17,6 +17,9 @@ mono_crash.*.json
 # VSCode
 .vscode
 
+# VS
+.vs
+
 # Logs
 *.log
 

@@ -1,0 +1,14 @@
+{
+  "profiles": {
+    "DatingSim": {
+      "commandName": "Project"
+    },
+    "Perfil 1": {
+      "commandName": "Executable",
+      "executablePath": "C:\\Users\\drami\\AppData\\Roaming\\Godot\\4.2 NET\\Godot_v4.2.1-stable_mono_win64.exe",
+      "commandLineArgs": "--path . --verbose",
+      "workingDirectory": ".",
+      "nativeDebugging": false
+    }
+  }
+}
