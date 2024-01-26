@@ -53,6 +53,26 @@ layout_mode = 2
 script = ExtResource("1_olo5x")
 story = ExtResource("2_2inxp")
 
+[node name="Name" type="Panel" parent="Ratio/Dialogue"]
+layout_mode = 0
+offset_left = 379.0
+offset_top = 539.0
+offset_right = 609.0
+offset_bottom = 579.0
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Ratio/Dialogue/Name"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 10.0
+offset_top = 7.0
+offset_right = -7.0
+offset_bottom = -5.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Example"
+
 [node name="Text" type="Panel" parent="Ratio/Dialogue"]
 layout_mode = 1
 anchors_preset = 7

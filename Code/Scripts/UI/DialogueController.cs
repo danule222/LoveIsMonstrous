@@ -1,3 +1,4 @@
+using System;
 using Godot;
 using GodotInk;
 
@@ -7,6 +8,7 @@ public partial class DialogueController : Control
 	private VBoxContainer vbx_text;
 	private VBoxContainer vbx_opts;
 	private Panel pnl_opts;
+	private RichTextLabel lbl_name;
 
 	public override void _Ready()
 	{
@@ -15,6 +17,7 @@ public partial class DialogueController : Control
 		vbx_text = GetNode<VBoxContainer>("Text/VBoxContainer");
 		vbx_opts = GetNode<VBoxContainer>("Options/VBoxContainer");
 		pnl_opts = GetNode<Panel>("Options");
+		lbl_name = GetNode<RichTextLabel>("Name/RichTextLabel");
 
 		Continue();
 	}
@@ -39,7 +42,18 @@ public partial class DialogueController : Control
 			foreach (Node child in vbx_text.GetChildren())
 				child.QueueFree();
 
-			Label content = new() { Text = story.Continue() };
+			string label_content = story.Continue();
+			if (label_content.Contains("<"))
+			{
+				int from = label_content.IndexOf("<") + "<".Length;
+				int to = label_content.IndexOf(">");
+				string name = label_content.Substring(from, to - from);
+
+				lbl_name.Text = name;
+				label_content = label_content.Remove(from - 1, (to + 1) - (from - 1));
+			}
+
+			Label content = new() { Text = label_content };
 			vbx_text.AddChild(content);
 		}
 	}
