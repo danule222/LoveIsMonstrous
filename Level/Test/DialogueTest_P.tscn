@@ -1,7 +1,20 @@
-[gd_scene load_steps=3 format=3 uid="uid://be051bhfhhuqf"]
+[gd_scene load_steps=7 format=3 uid="uid://be051bhfhhuqf"]
 
+[ext_resource type="Texture2D" uid="uid://te48j5bxp7o2" path="res://Art/Textures/Backgrounds/T_BackgroundTest.jpeg" id="1_7u3ci"]
 [ext_resource type="Script" path="res://Code/Scripts/UI/DialogueController.cs" id="1_olo5x"]
 [ext_resource type="Resource" uid="uid://db1po2uoge4ek" path="res://Ink/Test/Test.ink" id="2_2inxp"]
+
+[sub_resource type="Curve" id="Curve_b67mq"]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0]
+point_count = 1
+
+[sub_resource type="CurveXYZTexture" id="CurveXYZTexture_fkylr"]
+curve_x = SubResource("Curve_b67mq")
+curve_y = SubResource("Curve_b67mq")
+curve_z = SubResource("Curve_b67mq")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_a1mvp"]
+bg_color = Color(0.192157, 0.192157, 0.192157, 0.639216)
 
 [node name="Control" type="Control"]
 layout_mode = 3
@@ -11,29 +24,50 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Dialogue" type="Control" parent="."]
-layout_mode = 1
-anchors_preset = 2
-anchor_top = 1.0
-anchor_bottom = 1.0
-offset_left = 30.0
-offset_top = -224.0
-offset_right = 573.0
-offset_bottom = -30.0
-grow_vertical = 0
-script = ExtResource("1_olo5x")
-story = ExtResource("2_2inxp")
-
-[node name="Panel" type="Panel" parent="Dialogue"]
+[node name="Black" type="TextureRect" parent="."]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_top = 41.0
 grow_horizontal = 2
 grow_vertical = 2
+texture = SubResource("CurveXYZTexture_fkylr")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="Dialogue/Panel"]
+[node name="Ratio" type="AspectRatioContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+ratio = 1.779
+
+[node name="Background" type="TextureRect" parent="Ratio"]
+layout_mode = 2
+texture = ExtResource("1_7u3ci")
+expand_mode = 1
+stretch_mode = 6
+
+[node name="Dialogue" type="Control" parent="Ratio"]
+layout_mode = 2
+script = ExtResource("1_olo5x")
+story = ExtResource("2_2inxp")
+
+[node name="Text" type="Panel" parent="Ratio/Dialogue"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -305.0
+offset_top = -189.0
+offset_right = 305.0
+offset_bottom = -19.9998
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Ratio/Dialogue/Text"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -44,3 +78,29 @@ offset_right = -10.0
 offset_bottom = -10.0
 grow_horizontal = 2
 grow_vertical = 2
+
+[node name="Options" type="Panel" parent="Ratio/Dialogue"]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_a1mvp")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Ratio/Dialogue/Options"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -150.0
+offset_top = -250.0
+offset_right = 150.0
+offset_bottom = 250.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 5
+alignment = 1
