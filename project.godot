@@ -11,14 +11,14 @@ config_version=5
 [application]
 
 config/name="DatingSim"
-run/main_scene="res://Level/Test/MapTest_P.tscn"
+run/main_scene="res://Level/Scenes/Map_P.tscn"
 config/features=PackedStringArray("4.2", "C#", "Mobile")
 boot_splash/show_image=false
 config/icon="res://icon.svg"
 
 [autoload]
 
-GameController="*res://Code/Framework/GameController.cs"
+GameController="*res://Code/Scripts/Autoloads/GameController.cs"
 
 [display]
 

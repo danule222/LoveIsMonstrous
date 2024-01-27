@@ -1,14 +1,18 @@
 using Godot;
+using GodotInk;
 
 [GlobalClass]
 public partial class Character : Resource
 {
+  private GameController GCon;
+
   public enum EEmotions { Neutral, Happy, Sad }
   public enum EReply { Neutral, Good, Bad }
 
   [Export] public string Name { get; set; }
   [Export] public Godot.Collections.Array<Texture2D> Emotions { get; set; } // Bruh
-  [Export] public Godot.Collections.Array<MapController.ELocation> Timetable { get; set; }
+  [Export] public Godot.Collections.Array<GameController.ELocation> Timetable { get; set; }
+  [Export] public Godot.Collections.Array<InkStory> Dialogues { get; set; }
 
   public Character() : this("", null) { }
 
@@ -16,20 +20,5 @@ public partial class Character : Resource
   {
     Name = name;
     Emotions = emotions;
-  }
-
-  public void SetPoints(EReply reply)
-  {
-    switch (reply)
-    {
-      case EReply.Neutral:
-        break;
-      case EReply.Good:
-        GameController.POINTS[this] += 1;
-        break;
-      case EReply.Bad:
-        GameController.POINTS[this] -= 1;
-        break;
-    }
   }
 }

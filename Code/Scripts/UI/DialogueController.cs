@@ -3,7 +3,8 @@ using GodotInk;
 
 public partial class DialogueController : Control
 {
-	[Export] private InkStory Story;
+	private GameController GCon;
+
 	private RichTextLabel TXT_Name;
 	private RichTextLabel TXT_Dial;
 	private VBoxContainer VBX_Opts;
@@ -13,7 +14,7 @@ public partial class DialogueController : Control
 
 	public override void _Ready()
 	{
-		base._Ready();
+		GCon = GetNode<GameController>("/root/GameController");
 
 		TXT_Dial = GetNode<RichTextLabel>("Text/TXT_Dialogue");
 		TXT_Name = GetNode<RichTextLabel>("Name/TXT_Name");
@@ -32,7 +33,7 @@ public partial class DialogueController : Control
 
 		if (@event.IsActionPressed("Next") && !PNL_Opts.Visible)
 		{
-			if (Story.CanContinue)
+			if (GCon.CurrentDialogue.CanContinue)
 				Continue();
 			else
 			{
@@ -52,7 +53,7 @@ public partial class DialogueController : Control
 			int to = text.IndexOf(">");
 			string name = text.Substring(from, to - from);
 
-			ActualCharacter = GameController.CHARACTERS.Find(c => c.Name == name);
+			ActualCharacter = GCon.Characters.Find(c => c.Name == name);
 			if (ActualCharacter == null)
 				GD.PushError("Character couldn't be found in GameController.");
 			else
@@ -72,15 +73,15 @@ public partial class DialogueController : Control
 			{
 				case "Neutral":
 					IMG_Character.Texture =
-						GameController.CHARACTERS[0].Emotions[(int)Character.EEmotions.Neutral];
+						GCon.Characters[0].Emotions[(int)Character.EEmotions.Neutral];
 					break;
 				case "Happy":
 					IMG_Character.Texture =
-						GameController.CHARACTERS[0].Emotions[(int)Character.EEmotions.Happy];
+						GCon.Characters[0].Emotions[(int)Character.EEmotions.Happy];
 					break;
 				case "Sad":
 					IMG_Character.Texture =
-						GameController.CHARACTERS[0].Emotions[(int)Character.EEmotions.Sad];
+						GCon.Characters[0].Emotions[(int)Character.EEmotions.Sad];
 					break;
 			}
 
@@ -90,20 +91,20 @@ public partial class DialogueController : Control
 		// Variables
 		// - %PLAYERNAME%
 		if (text.Contains("%PLAYERNAME%"))
-			text = text.Replace("%PLAYERNAME%", GameController.PLAYER_NAME);
+			text = text.Replace("%PLAYERNAME%", GCon.PlayerName);
 
 		return text;
 	}
 
 	private void Continue(bool fromOption = false)
 	{
-		if (Story.CurrentChoices.Count <= 0)
+		if (GCon.CurrentDialogue.CurrentChoices.Count <= 0)
 		{
 			if (fromOption)
-				Story.Continue();
+				GCon.CurrentDialogue.Continue();
 
-			if (Story.CanContinue)
-				TXT_Dial.Text = ProcessText(Story.Continue());
+			if (GCon.CurrentDialogue.CanContinue)
+				TXT_Dial.Text = ProcessText(GCon.CurrentDialogue.Continue());
 			else
 				End();
 		}
@@ -137,11 +138,21 @@ public partial class DialogueController : Control
 		Button button = new() { Text = text };
 		button.Pressed += delegate
 		{
-			Story.ChooseChoiceIndex(choice.Index);
+			GCon.CurrentDialogue.ChooseChoiceIndex(choice.Index);
 			Continue(true);
 			PNL_Opts.Visible = false;
 
-			ActualCharacter.SetPoints(reply);
+			switch (reply)
+			{
+				case Character.EReply.Neutral:
+					break;
+				case Character.EReply.Good:
+					GCon.Points[ActualCharacter] += 1;
+					break;
+				case Character.EReply.Bad:
+					GCon.Points[ActualCharacter] -= 1;
+					break;
+			}
 
 			foreach (Node child in VBX_Opts.GetChildren())
 				child.QueueFree();
@@ -152,7 +163,7 @@ public partial class DialogueController : Control
 
 	private void ShowOptions()
 	{
-		foreach (InkChoice choice in Story.CurrentChoices)
+		foreach (InkChoice choice in GCon.CurrentDialogue.CurrentChoices)
 		{
 			VBX_Opts.AddChild(ProcessOption(choice));
 			PNL_Opts.Visible = true;
@@ -163,5 +174,10 @@ public partial class DialogueController : Control
 	{
 		// TODO: Implement End
 		TXT_Dial.Text = "";
+
+		GCon.Next();
+
+		// TODO: rotísimo
+		GetTree().ChangeSceneToFile("res://Level/Scenes/Map_P.tscn");
 	}
 }

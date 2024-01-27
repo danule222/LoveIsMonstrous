@@ -1,19 +1,20 @@
-[gd_scene load_steps=5 format=3 uid="uid://be051bhfhhuqf"]
+[gd_scene load_steps=5 format=3 uid="uid://br7uujfwyc4bj"]
 
-[ext_resource type="Texture2D" uid="uid://te48j5bxp7o2" path="res://Art/Textures/Backgrounds/T_BackgroundTest.jpeg" id="1_7u3ci"]
-[ext_resource type="Script" path="res://Code/Scripts/UI/DialogueController.cs" id="1_olo5x"]
-[ext_resource type="Texture2D" uid="uid://bl3hbqt6ob1ll" path="res://Art/Textures/Characters/Test/HappyFace.png" id="2_q0dkb"]
+[ext_resource type="Texture2D" uid="uid://te48j5bxp7o2" path="res://Art/Textures/Backgrounds/T_BackgroundTest.jpeg" id="1_nrxgs"]
+[ext_resource type="Script" path="res://Code/Scripts/UI/DialogueController.cs" id="2_xyhxk"]
+[ext_resource type="Texture2D" uid="uid://bl3hbqt6ob1ll" path="res://Art/Textures/Characters/Test/HappyFace.png" id="3_00ur5"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_a1mvp"]
 bg_color = Color(0.192157, 0.192157, 0.192157, 0.639216)
 
-[node name="Control" type="Control"]
+[node name="Dialogue" type="Control"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("2_xyhxk")
 
 [node name="Ratio" type="AspectRatioContainer" parent="."]
 layout_mode = 1
@@ -26,20 +27,11 @@ ratio = 1.779
 
 [node name="Background" type="TextureRect" parent="Ratio"]
 layout_mode = 2
-texture = ExtResource("1_7u3ci")
+texture = ExtResource("1_nrxgs")
 expand_mode = 2
 stretch_mode = 6
 
-[node name="Dialogue" type="Control" parent="."]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-script = ExtResource("1_olo5x")
-
-[node name="IMG_Character" type="TextureRect" parent="Dialogue"]
+[node name="IMG_Character" type="TextureRect" parent="."]
 layout_mode = 1
 anchors_preset = 7
 anchor_left = 0.5
@@ -53,9 +45,9 @@ offset_bottom = 1388.0
 grow_horizontal = 2
 grow_vertical = 0
 scale = Vector2(0.32, 0.32)
-texture = ExtResource("2_q0dkb")
+texture = ExtResource("3_00ur5")
 
-[node name="Name" type="Panel" parent="Dialogue"]
+[node name="Name" type="Panel" parent="."]
 layout_mode = 1
 anchors_preset = 7
 anchor_left = 0.5
@@ -69,7 +61,7 @@ offset_bottom = -108.0
 grow_horizontal = 2
 grow_vertical = 0
 
-[node name="TXT_Name" type="RichTextLabel" parent="Dialogue/Name"]
+[node name="TXT_Name" type="RichTextLabel" parent="Name"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -82,7 +74,7 @@ grow_horizontal = 2
 grow_vertical = 2
 text = "Name"
 
-[node name="Text" type="Panel" parent="Dialogue"]
+[node name="Text" type="Panel" parent="."]
 layout_mode = 1
 anchors_preset = 7
 anchor_left = 0.5
@@ -96,7 +88,7 @@ offset_bottom = -19.0
 grow_horizontal = 2
 grow_vertical = 0
 
-[node name="TXT_Dialogue" type="RichTextLabel" parent="Dialogue/Text"]
+[node name="TXT_Dialogue" type="RichTextLabel" parent="Text"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -109,7 +101,7 @@ grow_horizontal = 2
 grow_vertical = 2
 text = "Dialogue"
 
-[node name="Options" type="Panel" parent="Dialogue"]
+[node name="Options" type="Panel" parent="."]
 visible = false
 layout_mode = 1
 anchors_preset = 15
@@ -119,7 +111,7 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_a1mvp")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="Dialogue/Options"]
+[node name="VBoxContainer" type="VBoxContainer" parent="Options"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
