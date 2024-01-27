@@ -8,7 +8,7 @@ public partial class Character : Resource
 
   [Export] public string Name { get; set; }
   [Export] public Godot.Collections.Array<Texture2D> Emotions { get; set; } // Bruh
-  [Export] public Godot.Collections.Array<MapController.ELocations> Timetable { get; set; }
+  [Export] public Godot.Collections.Array<MapController.ELocation> Timetable { get; set; }
 
   public Character() : this("", null) { }
 

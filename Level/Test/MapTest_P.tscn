@@ -1,0 +1,66 @@
+[gd_scene load_steps=2 format=3 uid="uid://cl2rktjvcyx1w"]
+
+[ext_resource type="Script" path="res://Code/Scripts/UI/MapController.cs" id="1_7vs27"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_7vs27")
+
+[node name="BTN_Hallway" type="Button" parent="."]
+layout_mode = 0
+offset_left = 80.0
+offset_top = 17.0
+offset_right = 476.0
+offset_bottom = 338.0
+text = "Hallway"
+flat = true
+
+[node name="BTN_Library" type="Button" parent="."]
+layout_mode = 0
+offset_left = 945.0
+offset_top = 45.0
+offset_right = 1247.0
+offset_bottom = 315.0
+text = "Library"
+flat = true
+
+[node name="BTN_Gym" type="Button" parent="."]
+layout_mode = 0
+offset_left = 966.0
+offset_top = 422.0
+offset_right = 1235.0
+offset_bottom = 667.0
+text = "Gym"
+flat = true
+
+[node name="BTN_Class" type="Button" parent="."]
+layout_mode = 0
+offset_left = 542.0
+offset_top = 442.0
+offset_right = 854.0
+offset_bottom = 725.0
+text = "Class"
+flat = true
+
+[node name="BTN_Rooftop" type="Button" parent="."]
+layout_mode = 0
+offset_left = 500.0
+offset_top = 55.0
+offset_right = 822.0
+offset_bottom = 335.0
+text = "Rooftop"
+flat = true
+
+[node name="BTN_Entrance" type="Button" parent="."]
+layout_mode = 0
+offset_left = 12.0
+offset_top = 401.0
+offset_right = 419.0
+offset_bottom = 731.0
+text = "Entrance"
+flat = true
