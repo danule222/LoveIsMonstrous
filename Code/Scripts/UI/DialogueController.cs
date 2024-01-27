@@ -11,6 +11,7 @@ public partial class DialogueController : Control
 	private Panel PNL_Opts;
 	private TextureRect IMG_Character;
 	private Character ActualCharacter;
+	private bool FirstCharacter;
 
 	public override void _Ready()
 	{
@@ -23,6 +24,7 @@ public partial class DialogueController : Control
 		IMG_Character = GetNode<TextureRect>("IMG_Character");
 
 		ActualCharacter = null;
+		FirstCharacter = true;
 
 		Continue();
 	}
@@ -60,6 +62,10 @@ public partial class DialogueController : Control
 				TXT_Name.Text = ActualCharacter.Name;
 
 			text = text.Remove(from - 1, to + 1 - (from - 1));
+
+			// Visits
+			if (FirstCharacter && ActualCharacter != null)
+				GCon.Visits[ActualCharacter]++;
 		}
 
 		// Expression detection
@@ -73,15 +79,15 @@ public partial class DialogueController : Control
 			{
 				case "Neutral":
 					IMG_Character.Texture =
-						GCon.Characters[0].Emotions[(int)Character.EEmotions.Neutral];
+						ActualCharacter.Emotions[(int)Character.EEmotions.Neutral];
 					break;
 				case "Happy":
 					IMG_Character.Texture =
-						GCon.Characters[0].Emotions[(int)Character.EEmotions.Happy];
+						ActualCharacter.Emotions[(int)Character.EEmotions.Happy];
 					break;
 				case "Sad":
 					IMG_Character.Texture =
-						GCon.Characters[0].Emotions[(int)Character.EEmotions.Sad];
+						ActualCharacter.Emotions[(int)Character.EEmotions.Sad];
 					break;
 			}
 
@@ -172,12 +178,8 @@ public partial class DialogueController : Control
 
 	private void End()
 	{
-		// TODO: Implement End
-		TXT_Dial.Text = "";
-
 		GCon.Next();
 
-		// TODO: rotísimo
 		GetTree().ChangeSceneToFile("res://Level/Scenes/Map_P.tscn");
 	}
 }
