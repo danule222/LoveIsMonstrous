@@ -1,23 +1,27 @@
-using System;
 using Godot;
 using GodotInk;
 
 public partial class DialogueController : Control
 {
-	[Export] private InkStory story;
-	private VBoxContainer vbx_text;
-	private VBoxContainer vbx_opts;
-	private Panel pnl_opts;
-	private RichTextLabel lbl_name;
+	[Export] private InkStory Story;
+	private RichTextLabel TXT_Name;
+	private RichTextLabel TXT_Dial;
+	private VBoxContainer VBX_Dial;
+	private Panel PNL_Opts;
+	private TextureRect IMG_Character;
+	private Character ActualCharacter;
 
 	public override void _Ready()
 	{
 		base._Ready();
 
-		vbx_text = GetNode<VBoxContainer>("Text/VBoxContainer");
-		vbx_opts = GetNode<VBoxContainer>("Options/VBoxContainer");
-		pnl_opts = GetNode<Panel>("Options");
-		lbl_name = GetNode<RichTextLabel>("Name/RichTextLabel");
+		TXT_Dial = GetNode<RichTextLabel>("Text/TXT_Dialogue");
+		TXT_Name = GetNode<RichTextLabel>("Name/TXT_Name");
+		VBX_Dial = GetNode<VBoxContainer>("Options/VBoxContainer");
+		PNL_Opts = GetNode<Panel>("Options");
+		IMG_Character = GetNode<TextureRect>("IMG_Character");
+
+		ActualCharacter = null;
 
 		Continue();
 	}
@@ -26,54 +30,90 @@ public partial class DialogueController : Control
 	{
 		base._Input(@event);
 
-		if (@event.IsActionPressed("Next") && !pnl_opts.Visible)
+		if (@event.IsActionPressed("Next") && !PNL_Opts.Visible)
 		{
-			if (story.GetCanContinue())
+			if (Story.GetCanContinue())
 				Continue();
 			else
 				ShowOptions();
 		}
 	}
 
-	private void Continue()
+	private string ProcessText(string text)
 	{
-		if (story.CurrentChoices.Count <= 0)
+		// Character detection
+		if (text.Contains('<'))
 		{
-			foreach (Node child in vbx_text.GetChildren())
-				child.QueueFree();
+			int from = text.IndexOf("<") + "<".Length;
+			int to = text.IndexOf(">");
+			string name = text.Substring(from, to - from);
 
-			string label_content = story.Continue();
-			if (label_content.Contains("<"))
+			GD.Print(name);
+			ActualCharacter = GameController.Characters.Find(c => c.Name == name);
+			if (ActualCharacter == null)
+				GD.PushError("Character couldn't be found in GameController.");
+			else
+				TXT_Name.Text = ActualCharacter.Name;
+
+			text = text.Remove(from - 1, to + 1 - (from - 1));
+		}
+
+		// Expression detection
+		if (text.Contains('['))
+		{
+			int from = text.IndexOf("[") + "[".Length;
+			int to = text.IndexOf("]");
+			string expression = text.Substring(from, to - from);
+
+			switch (expression)
 			{
-				int from = label_content.IndexOf("<") + "<".Length;
-				int to = label_content.IndexOf(">");
-				string name = label_content.Substring(from, to - from);
-
-				lbl_name.Text = name;
-				label_content = label_content.Remove(from - 1, (to + 1) - (from - 1));
+				case "Neutral":
+					IMG_Character.Texture =
+						GameController.Characters[0].Emotions[(int)Character.EEmotions.Neutral];
+					break;
+				case "Happy":
+					IMG_Character.Texture =
+						GameController.Characters[0].Emotions[(int)Character.EEmotions.Happy];
+					break;
+				case "Sad":
+					IMG_Character.Texture =
+						GameController.Characters[0].Emotions[(int)Character.EEmotions.Sad];
+					break;
 			}
 
-			Label content = new() { Text = label_content };
-			vbx_text.AddChild(content);
+			text = text.Remove(from - 1, to + 1 - (from - 1));
 		}
+
+		// Variables
+		// - %PLAYERNAME%
+		if (text.Contains("%PLAYERNAME%"))
+			text = text.Replace("%PLAYERNAME%", GameController.PLAYER_NAME);
+
+		return text;
+	}
+
+	private void Continue()
+	{
+		if (Story.CurrentChoices.Count <= 0)
+			TXT_Dial.Text = ProcessText(Story.Continue());
 	}
 
 	private void ShowOptions()
 	{
-		foreach (Node child in vbx_opts.GetChildren())
+		foreach (Node child in VBX_Dial.GetChildren())
 			child.QueueFree();
 
-		foreach (InkChoice choice in story.CurrentChoices)
+		foreach (InkChoice choice in Story.CurrentChoices)
 		{
 			Button button = new() { Text = choice.Text };
 			button.Pressed += delegate
 			{
-				story.ChooseChoiceIndex(choice.Index);
+				Story.ChooseChoiceIndex(choice.Index);
 				Continue();
-				pnl_opts.Visible = false;
+				PNL_Opts.Visible = false;
 			};
-			vbx_opts.AddChild(button);
-			pnl_opts.Visible = true;
+			VBX_Dial.AddChild(button);
+			PNL_Opts.Visible = true;
 		}
 	}
 }

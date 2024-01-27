@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="Character" load_steps=5 format=3 uid="uid://b2uaa0qtd217u"]
+
+[ext_resource type="Script" path="res://Code/Resources/Character.cs" id="1_btv5v"]
+[ext_resource type="Texture2D" uid="uid://bmnfsw6fba8v7" path="res://Art/Textures/Characters/Test/NeutralFace.png" id="1_j6y7x"]
+[ext_resource type="Texture2D" uid="uid://bl3hbqt6ob1ll" path="res://Art/Textures/Characters/Test/HappyFace.png" id="2_6d48c"]
+[ext_resource type="Texture2D" uid="uid://d73ckhpengba" path="res://Art/Textures/Characters/Test/SadFace.png" id="3_8d5vn"]
+
+[resource]
+script = ExtResource("1_btv5v")
+Name = "Antoñito"
+Emotions = Array[Texture2D]([ExtResource("1_j6y7x"), ExtResource("2_6d48c"), ExtResource("3_8d5vn")])
