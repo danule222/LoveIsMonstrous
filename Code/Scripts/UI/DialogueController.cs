@@ -1,3 +1,4 @@
+using System;
 using Godot;
 using GodotInk;
 
@@ -26,8 +27,7 @@ public partial class DialogueController : Control
 		ActualCharacter = null;
 		FirstCharacter = true;
 
-		if (!GCon.CurrentDialogue.CanContinue)
-			GCon.CurrentDialogue.ResetState();
+		GCon.CurrentDialogue.ResetState();
 
 		Continue();
 	}

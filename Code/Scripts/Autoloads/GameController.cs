@@ -22,9 +22,12 @@ public partial class GameController : Node
 	public override void _Ready()
 	{
 		// Load characters
+		Characters.Clear();
 		Characters.Add(GD.Load<Character>("res://Characters/TestCharacter.tres"));
 
 		// Set points
+		Points.Clear();
+		Visits.Clear();
 		foreach (Character c in Characters)
 		{
 			Points.Add(c, 0);
@@ -38,6 +41,32 @@ public partial class GameController : Node
 		CurrentDialogue = GD.Load<InkStory>("res://Ink/Test/Test.ink");
 
 		IsGamePaused = false;
+	}
+
+	public void StartNewGame()
+	{
+		// Load characters
+		Characters.Clear();
+		Characters.Add(GD.Load<Character>("res://Characters/TestCharacter.tres"));
+
+		// Set points
+		Points.Clear();
+		Visits.Clear();
+		foreach (Character c in Characters)
+		{
+			Points.Add(c, 0);
+			Visits.Add(c, 0);
+		}
+
+		PlayerName = "Jeremy Towers";
+		CurrentWeekDay = EWeekDay.Monday;
+		CurrentDayPart = EDayPart.Morning;
+		CurrentLocation = ELocation.Hallway;
+		CurrentDialogue = GD.Load<InkStory>("res://Ink/Test/Test.ink");
+
+		IsGamePaused = false;
+
+		GetTree().ChangeSceneToFile("res://Level/Scenes/Map_P.tscn");
 	}
 
 	public void GoTo(ELocation location)

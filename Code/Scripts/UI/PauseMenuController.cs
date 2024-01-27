@@ -48,6 +48,7 @@ public partial class PauseMenuController : Control
 
 	private void ClickedToMenu()
 	{
-		// TODO: Go to main menu
+		GetTree().ChangeSceneToFile("res://Level/Scenes/MainMenu_P.tscn");
+		GCon.IsGamePaused = false;
 	}
 }

@@ -25,10 +25,13 @@ public partial class MainMenuController : Control
 	private void ClickedPlay()
 	{
 		// TODO: Start with prologue
-		GetTree().ChangeSceneToFile("res://Level/Scenes/Map_P.tscn");
+		GCon.StartNewGame();
 	}
 
 	private void ClickedSettings() { }
 
-	private void ClickedExit() { }
+	private void ClickedExit()
+	{
+		GetTree().Quit();
+	}
 }
