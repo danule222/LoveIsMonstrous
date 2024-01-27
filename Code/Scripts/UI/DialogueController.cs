@@ -26,11 +26,17 @@ public partial class DialogueController : Control
 		ActualCharacter = null;
 		FirstCharacter = true;
 
+		if (!GCon.CurrentDialogue.CanContinue)
+			GCon.CurrentDialogue.ResetState();
+
 		Continue();
 	}
 
 	public override void _Input(InputEvent @event)
 	{
+		if (GCon.IsGamePaused)
+			return;
+
 		base._Input(@event);
 
 		if (@event.IsActionPressed("Next") && !PNL_Opts.Visible)
@@ -65,7 +71,10 @@ public partial class DialogueController : Control
 
 			// Visits
 			if (FirstCharacter && ActualCharacter != null)
+			{
 				GCon.Visits[ActualCharacter]++;
+				FirstCharacter = false;
+			}
 		}
 
 		// Expression detection

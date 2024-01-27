@@ -16,6 +16,7 @@ public partial class GameController : Node
 	public EDayPart CurrentDayPart;
 	public ELocation CurrentLocation;
 	public InkStory CurrentDialogue;
+	public bool IsGamePaused;
 
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
@@ -35,6 +36,8 @@ public partial class GameController : Node
 		CurrentDayPart = EDayPart.Morning;
 		CurrentLocation = ELocation.Hallway;
 		CurrentDialogue = GD.Load<InkStory>("res://Ink/Test/Test.ink");
+
+		IsGamePaused = false;
 	}
 
 	public void GoTo(ELocation location)

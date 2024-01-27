@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://j2hqgl1dpbd0"]
+[gd_scene load_steps=3 format=3 uid="uid://j2hqgl1dpbd0"]
 
 [ext_resource type="Script" path="res://Code/Scripts/UI/MapController.cs" id="1_sjwin"]
+[ext_resource type="PackedScene" uid="uid://ovioe8r4wdyl" path="res://Level/UI/S_PauseMenu.tscn" id="2_cpjqh"]
 
 [node name="Map" type="Control"]
 layout_mode = 3
@@ -73,3 +74,7 @@ offset_right = 1320.0
 offset_bottom = 74.0
 bbcode_enabled = true
 text = "[center]Midday[/center]"
+
+[node name="PauseMenu" parent="." instance=ExtResource("2_cpjqh")]
+visible = false
+layout_mode = 1

@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://br7uujfwyc4bj"]
+[gd_scene load_steps=6 format=3 uid="uid://br7uujfwyc4bj"]
 
 [ext_resource type="Texture2D" uid="uid://te48j5bxp7o2" path="res://Art/Textures/Backgrounds/T_BackgroundTest.jpeg" id="1_nrxgs"]
 [ext_resource type="Script" path="res://Code/Scripts/UI/DialogueController.cs" id="2_xyhxk"]
 [ext_resource type="Texture2D" uid="uid://bl3hbqt6ob1ll" path="res://Art/Textures/Characters/Test/HappyFace.png" id="3_00ur5"]
+[ext_resource type="PackedScene" uid="uid://ovioe8r4wdyl" path="res://Level/UI/S_PauseMenu.tscn" id="4_cuiey"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_a1mvp"]
 bg_color = Color(0.192157, 0.192157, 0.192157, 0.639216)
@@ -126,3 +127,7 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/separation = 5
 alignment = 1
+
+[node name="PauseMenu" parent="." instance=ExtResource("4_cuiey")]
+visible = false
+layout_mode = 1

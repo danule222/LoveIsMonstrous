@@ -1,0 +1,53 @@
+[gd_scene load_steps=2 format=3 uid="uid://ovioe8r4wdyl"]
+
+[ext_resource type="Script" path="res://Code/Scripts/UI/PauseMenuController.cs" id="1_44vbp"]
+
+[node name="PauseMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_44vbp")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -265.0
+offset_top = -228.5
+offset_right = 265.0
+offset_bottom = 228.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -195.0
+offset_top = -195.5
+offset_right = 195.0
+offset_bottom = 196.5
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="BTN_Continue" type="Button" parent="Panel/VBoxContainer"]
+layout_mode = 2
+text = "Continue"
+
+[node name="BTN_Settings" type="Button" parent="Panel/VBoxContainer"]
+layout_mode = 2
+text = "Settings"
+
+[node name="BTN_ToMenu" type="Button" parent="Panel/VBoxContainer"]
+layout_mode = 2
+text = "To main menu"
