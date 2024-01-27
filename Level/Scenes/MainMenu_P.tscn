@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://dqu8sk2aovtv3"]
+[gd_scene load_steps=3 format=3 uid="uid://dqu8sk2aovtv3"]
 
 [ext_resource type="Script" path="res://Code/Scripts/UI/MainMenuController.cs" id="1_a63q1"]
+[ext_resource type="PackedScene" uid="uid://ba0a6ryh0k1rk" path="res://Level/UI/S_SettingsMenu.tscn" id="2_pm36k"]
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
@@ -11,7 +12,7 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_a63q1")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="."]
+[node name="Buttons" type="VBoxContainer" parent="."]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -26,14 +27,36 @@ grow_horizontal = 2
 grow_vertical = 2
 alignment = 1
 
-[node name="BTN_Play" type="Button" parent="VBoxContainer"]
+[node name="BTN_Play" type="Button" parent="Buttons"]
 layout_mode = 2
+focus_neighbor_left = NodePath(".")
+focus_neighbor_top = NodePath("../BTN_Exit")
+focus_neighbor_right = NodePath(".")
+focus_neighbor_bottom = NodePath("../BTN_Settings")
+focus_next = NodePath("../BTN_Settings")
+focus_previous = NodePath(".")
 text = "Play"
 
-[node name="BTN_Settings" type="Button" parent="VBoxContainer"]
+[node name="BTN_Settings" type="Button" parent="Buttons"]
 layout_mode = 2
+focus_neighbor_left = NodePath(".")
+focus_neighbor_top = NodePath("../BTN_Play")
+focus_neighbor_right = NodePath(".")
+focus_neighbor_bottom = NodePath("../BTN_Exit")
+focus_next = NodePath("../BTN_Exit")
+focus_previous = NodePath("../BTN_Play")
 text = "Settings"
 
-[node name="BTN_Exit" type="Button" parent="VBoxContainer"]
+[node name="BTN_Exit" type="Button" parent="Buttons"]
 layout_mode = 2
+focus_neighbor_left = NodePath(".")
+focus_neighbor_top = NodePath("../BTN_Settings")
+focus_neighbor_right = NodePath(".")
+focus_neighbor_bottom = NodePath("../BTN_Play")
+focus_next = NodePath("../BTN_Play")
+focus_previous = NodePath("../BTN_Settings")
 text = "Exit"
+
+[node name="SettingsMenu" parent="." instance=ExtResource("2_pm36k")]
+visible = false
+layout_mode = 1

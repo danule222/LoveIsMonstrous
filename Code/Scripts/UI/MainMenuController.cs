@@ -13,9 +13,9 @@ public partial class MainMenuController : Control
 	{
 		GCon = GetNode<GameController>("/root/GameController");
 
-		BTN_Play = GetNode<Button>("VBoxContainer/BTN_Play");
-		BTN_Settings = GetNode<Button>("VBoxContainer/BTN_Settings");
-		BTN_Exit = GetNode<Button>("VBoxContainer/BTN_Exit");
+		BTN_Play = GetNode<Button>("Buttons/BTN_Play");
+		BTN_Settings = GetNode<Button>("Buttons/BTN_Settings");
+		BTN_Exit = GetNode<Button>("Buttons/BTN_Exit");
 
 		BTN_Play.Pressed += delegate { ClickedPlay(); };
 		BTN_Settings.Pressed += delegate { ClickedSettings(); };

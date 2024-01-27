@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://ovioe8r4wdyl"]
+[gd_scene load_steps=3 format=3 uid="uid://ovioe8r4wdyl"]
 
 [ext_resource type="Script" path="res://Code/Scripts/UI/PauseMenuController.cs" id="1_44vbp"]
+[ext_resource type="PackedScene" uid="uid://ba0a6ryh0k1rk" path="res://Level/UI/S_SettingsMenu.tscn" id="2_e4g3b"]
 
 [node name="PauseMenu" type="Control"]
 layout_mode = 3
@@ -11,7 +12,7 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_44vbp")
 
-[node name="Panel" type="Panel" parent="."]
+[node name="PNL_PauseMenu" type="Panel" parent="."]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -25,7 +26,7 @@ offset_bottom = 228.5
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="VBoxContainer" type="VBoxContainer" parent="Panel"]
+[node name="VBoxContainer" type="VBoxContainer" parent="PNL_PauseMenu"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -40,14 +41,36 @@ grow_horizontal = 2
 grow_vertical = 2
 alignment = 1
 
-[node name="BTN_Continue" type="Button" parent="Panel/VBoxContainer"]
+[node name="BTN_Continue" type="Button" parent="PNL_PauseMenu/VBoxContainer"]
 layout_mode = 2
+focus_neighbor_left = NodePath(".")
+focus_neighbor_top = NodePath("../BTN_ToMenu")
+focus_neighbor_right = NodePath(".")
+focus_neighbor_bottom = NodePath("../BTN_Settings")
+focus_next = NodePath("../BTN_Settings")
+focus_previous = NodePath("../BTN_ToMenu")
 text = "Continue"
 
-[node name="BTN_Settings" type="Button" parent="Panel/VBoxContainer"]
+[node name="BTN_Settings" type="Button" parent="PNL_PauseMenu/VBoxContainer"]
 layout_mode = 2
+focus_neighbor_left = NodePath(".")
+focus_neighbor_top = NodePath("../BTN_Continue")
+focus_neighbor_right = NodePath(".")
+focus_neighbor_bottom = NodePath("../BTN_ToMenu")
+focus_next = NodePath("../BTN_ToMenu")
+focus_previous = NodePath("../BTN_Continue")
 text = "Settings"
 
-[node name="BTN_ToMenu" type="Button" parent="Panel/VBoxContainer"]
+[node name="BTN_ToMenu" type="Button" parent="PNL_PauseMenu/VBoxContainer"]
 layout_mode = 2
+focus_neighbor_left = NodePath(".")
+focus_neighbor_top = NodePath("../BTN_Settings")
+focus_neighbor_right = NodePath(".")
+focus_neighbor_bottom = NodePath("../BTN_Continue")
+focus_next = NodePath("../BTN_Continue")
+focus_previous = NodePath("../BTN_Settings")
 text = "To main menu"
+
+[node name="SettingsMenu" parent="." instance=ExtResource("2_e4g3b")]
+visible = false
+layout_mode = 1
