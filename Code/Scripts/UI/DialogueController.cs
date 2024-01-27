@@ -6,7 +6,7 @@ public partial class DialogueController : Control
 	[Export] private InkStory Story;
 	private RichTextLabel TXT_Name;
 	private RichTextLabel TXT_Dial;
-	private VBoxContainer VBX_Dial;
+	private VBoxContainer VBX_Opts;
 	private Panel PNL_Opts;
 	private TextureRect IMG_Character;
 	private Character ActualCharacter;
@@ -17,7 +17,7 @@ public partial class DialogueController : Control
 
 		TXT_Dial = GetNode<RichTextLabel>("Text/TXT_Dialogue");
 		TXT_Name = GetNode<RichTextLabel>("Name/TXT_Name");
-		VBX_Dial = GetNode<VBoxContainer>("Options/VBoxContainer");
+		VBX_Opts = GetNode<VBoxContainer>("Options/VBoxContainer");
 		PNL_Opts = GetNode<Panel>("Options");
 		IMG_Character = GetNode<TextureRect>("IMG_Character");
 
@@ -32,10 +32,14 @@ public partial class DialogueController : Control
 
 		if (@event.IsActionPressed("Next") && !PNL_Opts.Visible)
 		{
-			if (Story.GetCanContinue())
+			if (Story.CanContinue)
 				Continue();
 			else
+			{
 				ShowOptions();
+				if (VBX_Opts.GetChildCount() == 0)
+					End();
+			}
 		}
 	}
 
@@ -48,8 +52,7 @@ public partial class DialogueController : Control
 			int to = text.IndexOf(">");
 			string name = text.Substring(from, to - from);
 
-			GD.Print(name);
-			ActualCharacter = GameController.Characters.Find(c => c.Name == name);
+			ActualCharacter = GameController.CHARACTERS.Find(c => c.Name == name);
 			if (ActualCharacter == null)
 				GD.PushError("Character couldn't be found in GameController.");
 			else
@@ -69,15 +72,15 @@ public partial class DialogueController : Control
 			{
 				case "Neutral":
 					IMG_Character.Texture =
-						GameController.Characters[0].Emotions[(int)Character.EEmotions.Neutral];
+						GameController.CHARACTERS[0].Emotions[(int)Character.EEmotions.Neutral];
 					break;
 				case "Happy":
 					IMG_Character.Texture =
-						GameController.Characters[0].Emotions[(int)Character.EEmotions.Happy];
+						GameController.CHARACTERS[0].Emotions[(int)Character.EEmotions.Happy];
 					break;
 				case "Sad":
 					IMG_Character.Texture =
-						GameController.Characters[0].Emotions[(int)Character.EEmotions.Sad];
+						GameController.CHARACTERS[0].Emotions[(int)Character.EEmotions.Sad];
 					break;
 			}
 
@@ -92,28 +95,73 @@ public partial class DialogueController : Control
 		return text;
 	}
 
-	private void Continue()
+	private void Continue(bool fromOption = false)
 	{
 		if (Story.CurrentChoices.Count <= 0)
-			TXT_Dial.Text = ProcessText(Story.Continue());
+		{
+			if (fromOption)
+				Story.Continue();
+
+			if (Story.CanContinue)
+				TXT_Dial.Text = ProcessText(Story.Continue());
+			else
+				End();
+		}
+	}
+
+	private Button ProcessOption(InkChoice choice)
+	{
+		string text = choice.Text;
+		Character.EReply reply = Character.EReply.Neutral;
+
+		// Option detection
+		if (text.Contains('<'))
+		{
+			int from = text.IndexOf("<") + "<".Length;
+			int to = text.IndexOf(">");
+			string option = text.Substring(from, to - from);
+
+			switch (option)
+			{
+				case "G":
+					reply = Character.EReply.Good;
+					break;
+				case "B":
+					reply = Character.EReply.Bad;
+					break;
+			}
+
+			text = text.Remove(from - 1, to + 1 - (from - 1));
+		}
+
+		Button button = new() { Text = text };
+		button.Pressed += delegate
+		{
+			Story.ChooseChoiceIndex(choice.Index);
+			Continue(true);
+			PNL_Opts.Visible = false;
+
+			ActualCharacter.SetPoints(reply);
+
+			foreach (Node child in VBX_Opts.GetChildren())
+				child.QueueFree();
+		};
+
+		return button;
 	}
 
 	private void ShowOptions()
 	{
-		foreach (Node child in VBX_Dial.GetChildren())
-			child.QueueFree();
-
 		foreach (InkChoice choice in Story.CurrentChoices)
 		{
-			Button button = new() { Text = choice.Text };
-			button.Pressed += delegate
-			{
-				Story.ChooseChoiceIndex(choice.Index);
-				Continue();
-				PNL_Opts.Visible = false;
-			};
-			VBX_Dial.AddChild(button);
+			VBX_Opts.AddChild(ProcessOption(choice));
 			PNL_Opts.Visible = true;
 		}
+	}
+
+	private void End()
+	{
+		// TODO: Implement End
+		TXT_Dial.Text = "";
 	}
 }

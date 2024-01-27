@@ -7,6 +7,9 @@
 - [Sad]¡Ayy la Maricarmen!
 - xd
 
- * Opción
- * Otra opción
+ * <G>Good
+ * <B>Bad
+ * <N>Neutral
+ 
+- Olee!
 -> END
