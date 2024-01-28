@@ -2,11 +2,16 @@ using Godot;
 
 public partial class SettingsController : Control
 {
-	public Panel PreviousMenu;
+	public Control PreviousMenu;
+
+	private Button BTN_Back;
 
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
 	{
+		BTN_Back = GetNode<Button>("Panel/BTN_Back");
+
+		BTN_Back.Pressed += delegate { GoBack(); };
 	}
 
 	public override void _Input(InputEvent @event)

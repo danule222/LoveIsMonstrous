@@ -12,7 +12,7 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_a63q1")
 
-[node name="Buttons" type="VBoxContainer" parent="."]
+[node name="VBX_Buttons" type="VBoxContainer" parent="."]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -27,7 +27,7 @@ grow_horizontal = 2
 grow_vertical = 2
 alignment = 1
 
-[node name="BTN_Play" type="Button" parent="Buttons"]
+[node name="BTN_Play" type="Button" parent="VBX_Buttons"]
 layout_mode = 2
 focus_neighbor_left = NodePath(".")
 focus_neighbor_top = NodePath("../BTN_Exit")
@@ -37,7 +37,7 @@ focus_next = NodePath("../BTN_Settings")
 focus_previous = NodePath(".")
 text = "Play"
 
-[node name="BTN_Settings" type="Button" parent="Buttons"]
+[node name="BTN_Settings" type="Button" parent="VBX_Buttons"]
 layout_mode = 2
 focus_neighbor_left = NodePath(".")
 focus_neighbor_top = NodePath("../BTN_Play")
@@ -47,7 +47,7 @@ focus_next = NodePath("../BTN_Exit")
 focus_previous = NodePath("../BTN_Play")
 text = "Settings"
 
-[node name="BTN_Exit" type="Button" parent="Buttons"]
+[node name="BTN_Exit" type="Button" parent="VBX_Buttons"]
 layout_mode = 2
 focus_neighbor_left = NodePath(".")
 focus_neighbor_top = NodePath("../BTN_Settings")
