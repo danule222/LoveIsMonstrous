@@ -11,6 +11,7 @@ public partial class DialogueController : Control
 	private VBoxContainer VBX_Opts;
 	private Panel PNL_Opts;
 	private TextureRect IMG_Character;
+	private TextureRect IMG_Background;
 	private Character ActualCharacter;
 	private bool FirstCharacter;
 
@@ -23,11 +24,17 @@ public partial class DialogueController : Control
 		VBX_Opts = GetNode<VBoxContainer>("Options/VBoxContainer");
 		PNL_Opts = GetNode<Panel>("Options");
 		IMG_Character = GetNode<TextureRect>("IMG_Character");
+		IMG_Background = GetNode<TextureRect>("Ratio/IMG_Background");
 
 		ActualCharacter = null;
 		FirstCharacter = true;
 
 		GCon.CurrentDialogue.ResetState();
+
+		if (GCon.CurrentDayPart != GameController.EDayPart.Afternoon)
+			IMG_Background.Texture = GCon.LocationsBackgrounds[GCon.CurrentLocation][0];
+		else
+			IMG_Background.Texture = GCon.LocationsBackgrounds[GCon.CurrentLocation][1];
 
 		Continue();
 	}

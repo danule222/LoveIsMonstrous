@@ -37,7 +37,7 @@ public partial class MapController : Control
 		BTN_Library.Pressed += delegate { GCon.GoTo(GameController.ELocation.Library); };
 		BTN_Gym.Pressed += delegate { GCon.GoTo(GameController.ELocation.Gym); };
 		BTN_Classroom.Pressed += delegate { GCon.GoTo(GameController.ELocation.Classroom); };
-		BTN_Roof.Pressed += delegate { GCon.GoTo(GameController.ELocation.Roof); };
+		BTN_Roof.Pressed += delegate { GCon.GoTo(GameController.ELocation.Rooftop); };
 		BTN_Lockers.Pressed += delegate { GCon.GoTo(GameController.ELocation.Lockers); };
 		BTN_Map.Pressed += delegate
 		{

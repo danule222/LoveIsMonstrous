@@ -12,6 +12,6 @@
 script = ExtResource("7_5k77o")
 Name = "Azreial"
 Emotions = Array[Texture2D]([ExtResource("3_1j45x"), ExtResource("4_j2f7k"), ExtResource("5_m24h4")])
-Timetable = Array[int]([0, 2, 3])
+Timetable = Array[int]([1, 2, 3])
 Dialogues = Array[Resource]([ExtResource("1_xfbtx"), ExtResource("2_2gixm"), ExtResource("1_xfbtx"), ExtResource("1_xfbtx"), ExtResource("1_xfbtx"), ExtResource("1_xfbtx")])
 StalkerDialogues = Array[Resource]([ExtResource("6_61p64")])

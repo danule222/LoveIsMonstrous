@@ -6,13 +6,15 @@ public partial class GameController : Node
 {
 	public enum EWeekDay { Monday, Tuesday, Wednesday, Thursday, Friday, Saturday }
 	public enum EDayPart { Morning, Midday, Afternoon }
-	public enum ELocation { Hallway, Library, Gym, Classroom, Roof, Lockers }
+	public enum ELocation { Hallway, Library, Gym, Classroom, Rooftop, Lockers }
 
 	public List<Character> Characters = new List<Character>();
 	public List<Character> CharactersVisitedToday = new List<Character>(2);
 	public Dictionary<Character, int> Points = new Dictionary<Character, int>();
 	public Dictionary<Character, int> Visits = new Dictionary<Character, int>();
 	public Dictionary<Character, int> Stalkers = new Dictionary<Character, int>();
+	public Dictionary<ELocation, List<Texture2D>> LocationsBackgrounds =
+		new Dictionary<ELocation, List<Texture2D>>();
 	public string PlayerName;
 	public EWeekDay CurrentWeekDay;
 	public EDayPart CurrentDayPart;
@@ -43,6 +45,32 @@ public partial class GameController : Node
 		CurrentDayPart = EDayPart.Morning;
 		CurrentLocation = ELocation.Hallway;
 		CurrentDialogue = GD.Load<InkStory>("res://Ink/Test/Test.ink");
+
+		string backPath = "res://Art/Textures/Backgrounds/";
+		LocationsBackgrounds.Add(
+			ELocation.Classroom,
+			new List<Texture2D>() { GD.Load<Texture2D>(backPath + "T_Classroom_Morning.png"), GD.Load<Texture2D>(backPath + "T_Classroom_Afternoon.png") }
+		);
+		LocationsBackgrounds.Add(
+			ELocation.Gym,
+			new List<Texture2D>() { GD.Load<Texture2D>(backPath + "T_Gym_Morning.png"), GD.Load<Texture2D>(backPath + "T_Gym_Afternoon.png") }
+		);
+		LocationsBackgrounds.Add(
+			ELocation.Hallway,
+			new List<Texture2D>() { GD.Load<Texture2D>(backPath + "T_Hallway_Morning.png"), GD.Load<Texture2D>(backPath + "T_Hallway_Afternoon.png") }
+		);
+		LocationsBackgrounds.Add(
+			ELocation.Rooftop,
+			new List<Texture2D>() { GD.Load<Texture2D>(backPath + "T_Rooftop_Morning.png"), GD.Load<Texture2D>(backPath + "T_Rooftop_Afternoon.png") }
+		);
+		LocationsBackgrounds.Add(
+			ELocation.Library,
+			new List<Texture2D>() { GD.Load<Texture2D>(backPath + "T_Library_Morning.png"), GD.Load<Texture2D>(backPath + "T_Library_Afternoon.png") }
+		);
+		LocationsBackgrounds.Add(
+			ELocation.Lockers,
+			new List<Texture2D>() { GD.Load<Texture2D>(backPath + "T_Lockers_Morning.png"), GD.Load<Texture2D>(backPath + "T_Lockers_Afternoon.png") }
+		);
 
 		IsGamePaused = false;
 	}
@@ -80,6 +108,8 @@ public partial class GameController : Node
 
 	public void GoTo(ELocation location)
 	{
+		CurrentLocation = location;
+
 		Character c = Characters.Find(x => x.Timetable[(int)CurrentDayPart] == location);
 		if (c == null) GD.PushError("There's no character assigned to "
 		 														+ location + " at " + CurrentDayPart);
