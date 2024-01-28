@@ -1,10 +1,18 @@
-[gd_scene load_steps=8 format=3 uid="uid://br7uujfwyc4bj"]
+[gd_scene load_steps=10 format=3 uid="uid://br7uujfwyc4bj"]
 
 [ext_resource type="Texture2D" uid="uid://te48j5bxp7o2" path="res://Art/Textures/Backgrounds/T_BackgroundTest.jpeg" id="1_nrxgs"]
 [ext_resource type="Script" path="res://Code/Scripts/UI/DialogueController.cs" id="2_xyhxk"]
 [ext_resource type="Texture2D" uid="uid://bl3hbqt6ob1ll" path="res://Art/Textures/Characters/Test/HappyFace.png" id="3_00ur5"]
+[ext_resource type="Texture2D" uid="uid://ug2ae32enw2m" path="res://Art/Textures/UI/T_DialogueBoxName.png" id="4_atu4u"]
 [ext_resource type="PackedScene" uid="uid://ovioe8r4wdyl" path="res://Level/UI/S_PauseMenu.tscn" id="4_cuiey"]
 [ext_resource type="Texture2D" uid="uid://dkn5kyx4elo5h" path="res://Art/Textures/UI/T_DialogueBox.png" id="4_tux06"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_u0ulc"]
+texture = ExtResource("4_atu4u")
+texture_margin_left = 20.0
+texture_margin_top = 20.0
+texture_margin_right = 20.0
+texture_margin_bottom = 20.0
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_doc71"]
 texture = ExtResource("4_tux06")
@@ -63,25 +71,29 @@ anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = -304.84
-offset_top = -148.0
-offset_right = -74.84
-offset_bottom = -108.0
+offset_left = -293.0
+offset_top = -191.0
+offset_right = 109.0
+offset_bottom = -101.0
 grow_horizontal = 2
 grow_vertical = 0
+scale = Vector2(0.5, 0.5)
+theme_override_styles/panel = SubResource("StyleBoxTexture_u0ulc")
 
 [node name="TXT_Name" type="RichTextLabel" parent="Name"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 10.0
-offset_top = 8.0
-offset_right = -10.0
-offset_bottom = -8.0
+offset_left = 42.0
+offset_top = 20.0
+offset_right = -36.0
+offset_bottom = -18.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_font_sizes/normal_font_size = 33
 text = "Name"
+scroll_active = false
 
 [node name="Text" type="Panel" parent="."]
 layout_mode = 1
@@ -106,13 +118,14 @@ anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 offset_left = 152.0
-offset_top = 82.0
+offset_top = 68.0
 offset_right = -184.0
-offset_bottom = -80.0
+offset_bottom = -68.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_font_sizes/normal_font_size = 36
+theme_override_font_sizes/normal_font_size = 40
 text = "Dialogue"
+scroll_active = false
 
 [node name="Options" type="Panel" parent="."]
 visible = false
