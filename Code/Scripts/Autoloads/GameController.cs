@@ -27,7 +27,12 @@ public partial class GameController : Node
 	{
 		// Load characters
 		Characters.Clear();
-		Characters.Add(GD.Load<Character>("res://Characters/TestCharacter.tres"));
+		Characters.Add(GD.Load<Character>("res://Characters/Azreial.tres"));
+		Characters.Add(GD.Load<Character>("res://Characters/Eyeden.tres"));
+		Characters.Add(GD.Load<Character>("res://Characters/Fern.tres"));
+		Characters.Add(GD.Load<Character>("res://Characters/Gourdon.tres"));
+		Characters.Add(GD.Load<Character>("res://Characters/Owlaf.tres"));
+		Characters.Add(GD.Load<Character>("res://Characters/Wrenfield.tres"));
 
 		// Set points
 		Points.Clear();
@@ -47,6 +52,7 @@ public partial class GameController : Node
 		CurrentDialogue = GD.Load<InkStory>("res://Ink/Test/Test.ink");
 
 		string backPath = "res://Art/Textures/Backgrounds/";
+		LocationsBackgrounds.Clear();
 		LocationsBackgrounds.Add(
 			ELocation.Classroom,
 			new List<Texture2D>() { GD.Load<Texture2D>(backPath + "T_Classroom_Morning.png"), GD.Load<Texture2D>(backPath + "T_Classroom_Afternoon.png") }
@@ -79,6 +85,8 @@ public partial class GameController : Node
 	{
 		// Load characters
 		Characters.Clear();
+		// Load characters
+		Characters.Clear();
 		Characters.Add(GD.Load<Character>("res://Characters/Azreial.tres"));
 		Characters.Add(GD.Load<Character>("res://Characters/Eyeden.tres"));
 		Characters.Add(GD.Load<Character>("res://Characters/Fern.tres"));
@@ -89,10 +97,12 @@ public partial class GameController : Node
 		// Set points
 		Points.Clear();
 		Visits.Clear();
+		Stalkers.Clear();
 		foreach (Character c in Characters)
 		{
 			Points.Add(c, 0);
 			Visits.Add(c, 0);
+			Stalkers.Add(c, 0);
 		}
 
 		PlayerName = "Jeremy Towers";
@@ -100,6 +110,33 @@ public partial class GameController : Node
 		CurrentDayPart = EDayPart.Morning;
 		CurrentLocation = ELocation.Hallway;
 		CurrentDialogue = GD.Load<InkStory>("res://Ink/Test/Test.ink");
+
+		string backPath = "res://Art/Textures/Backgrounds/";
+		LocationsBackgrounds.Clear();
+		LocationsBackgrounds.Add(
+			ELocation.Classroom,
+			new List<Texture2D>() { GD.Load<Texture2D>(backPath + "T_Classroom_Morning.png"), GD.Load<Texture2D>(backPath + "T_Classroom_Afternoon.png") }
+		);
+		LocationsBackgrounds.Add(
+			ELocation.Gym,
+			new List<Texture2D>() { GD.Load<Texture2D>(backPath + "T_Gym_Morning.png"), GD.Load<Texture2D>(backPath + "T_Gym_Afternoon.png") }
+		);
+		LocationsBackgrounds.Add(
+			ELocation.Hallway,
+			new List<Texture2D>() { GD.Load<Texture2D>(backPath + "T_Hallway_Morning.png"), GD.Load<Texture2D>(backPath + "T_Hallway_Afternoon.png") }
+		);
+		LocationsBackgrounds.Add(
+			ELocation.Rooftop,
+			new List<Texture2D>() { GD.Load<Texture2D>(backPath + "T_Rooftop_Morning.png"), GD.Load<Texture2D>(backPath + "T_Rooftop_Afternoon.png") }
+		);
+		LocationsBackgrounds.Add(
+			ELocation.Library,
+			new List<Texture2D>() { GD.Load<Texture2D>(backPath + "T_Library_Morning.png"), GD.Load<Texture2D>(backPath + "T_Library_Afternoon.png") }
+		);
+		LocationsBackgrounds.Add(
+			ELocation.Lockers,
+			new List<Texture2D>() { GD.Load<Texture2D>(backPath + "T_Lockers_Morning.png"), GD.Load<Texture2D>(backPath + "T_Lockers_Afternoon.png") }
+		);
 
 		IsGamePaused = false;
 
