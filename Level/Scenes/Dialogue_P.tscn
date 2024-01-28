@@ -3,7 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://te48j5bxp7o2" path="res://Art/Textures/Backgrounds/T_BackgroundTest.jpeg" id="1_nrxgs"]
 [ext_resource type="Theme" uid="uid://dcckvuo8bsnke" path="res://Resources/UI Styles/UITheme.tres" id="1_poasx"]
 [ext_resource type="Script" path="res://Code/Scripts/UI/DialogueController.cs" id="2_xyhxk"]
-[ext_resource type="Texture2D" uid="uid://bl3hbqt6ob1ll" path="res://Art/Textures/Characters/Test/HappyFace.png" id="3_00ur5"]
+[ext_resource type="Texture2D" uid="uid://dq88mxetgl6im" path="res://Art/Textures/Characters/Wrenfield/T_Wrenfield_1.png" id="4_ads0m"]
 [ext_resource type="PackedScene" uid="uid://ovioe8r4wdyl" path="res://Level/UI/S_PauseMenu.tscn" id="4_cuiey"]
 [ext_resource type="Texture2D" uid="uid://dkn5kyx4elo5h" path="res://Art/Textures/UI/T_DialogueBox.png" id="4_tux06"]
 [ext_resource type="StyleBox" uid="uid://cbl510fd2inld" path="res://Resources/UI Styles/Name_Style.tres" id="5_x0juk"]
@@ -50,19 +50,16 @@ stretch_mode = 6
 
 [node name="IMG_Character" type="TextureRect" parent="."]
 layout_mode = 1
-anchors_preset = 7
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
+anchors_preset = 15
+anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -238.0
-offset_top = -652.0
-offset_right = 1256.0
-offset_bottom = 1388.0
+offset_top = -19.0
+offset_bottom = 11.0
 grow_horizontal = 2
-grow_vertical = 0
-scale = Vector2(0.32, 0.32)
-texture = ExtResource("3_00ur5")
+grow_vertical = 2
+texture = ExtResource("4_ads0m")
+expand_mode = 2
+stretch_mode = 6
 
 [node name="Options" type="Panel" parent="."]
 visible = false

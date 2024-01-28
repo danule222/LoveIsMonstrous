@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="Character" load_steps=8 format=3 uid="uid://dtuoldy2t7ypf"]
+
+[ext_resource type="Resource" uid="uid://db1po2uoge4ek" path="res://Ink/Test/Test.ink" id="1_khwr0"]
+[ext_resource type="Resource" uid="uid://g75hf6f27qit" path="res://Ink/Test/Test2.ink" id="2_dr1ck"]
+[ext_resource type="Texture2D" uid="uid://bkaeok2q5luqw" path="res://Art/Textures/Characters/Gourdon/T_Gourdon_Idle.png" id="3_1c8dt"]
+[ext_resource type="Texture2D" uid="uid://cwo31wyabwyb4" path="res://Art/Textures/Characters/Gourdon/T_Gourdon_LovyDovy.png" id="4_ixl0e"]
+[ext_resource type="Texture2D" uid="uid://bqfa84vvr5lfr" path="res://Art/Textures/Characters/Gourdon/T_Gourdon_WTF.png" id="5_yrrk8"]
+[ext_resource type="Resource" uid="uid://bljefhkdwktsx" path="res://Ink/Test/TestStalker.ink" id="6_ea3tf"]
+[ext_resource type="Script" path="res://Code/Resources/Character.cs" id="7_unng0"]
+
+[resource]
+script = ExtResource("7_unng0")
+Name = "Gourdon"
+Emotions = Array[Texture2D]([ExtResource("3_1c8dt"), ExtResource("4_ixl0e"), ExtResource("5_yrrk8")])
+Timetable = Array[int]([4, 3, 5])
+Dialogues = Array[Resource]([ExtResource("1_khwr0"), ExtResource("2_dr1ck"), ExtResource("1_khwr0"), ExtResource("1_khwr0"), ExtResource("1_khwr0"), ExtResource("1_khwr0")])
+StalkerDialogues = Array[Resource]([ExtResource("6_ea3tf")])

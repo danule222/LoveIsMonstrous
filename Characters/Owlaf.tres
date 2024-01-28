@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="Character" load_steps=8 format=3 uid="uid://0staxvx1onkx"]
+
+[ext_resource type="Resource" uid="uid://db1po2uoge4ek" path="res://Ink/Test/Test.ink" id="1_wta75"]
+[ext_resource type="Resource" uid="uid://g75hf6f27qit" path="res://Ink/Test/Test2.ink" id="2_y08iw"]
+[ext_resource type="Texture2D" uid="uid://d2vlspl11tv1l" path="res://Art/Textures/Characters/Owlaf/T_Owlaf_1.png" id="3_t7334"]
+[ext_resource type="Texture2D" uid="uid://3a0jbjnb0k78" path="res://Art/Textures/Characters/Owlaf/T_Owlaf_2.png" id="4_7cvyh"]
+[ext_resource type="Texture2D" uid="uid://dpymq73an503e" path="res://Art/Textures/Characters/Owlaf/T_Owlaf_3.png" id="5_3t2c4"]
+[ext_resource type="Resource" uid="uid://bljefhkdwktsx" path="res://Ink/Test/TestStalker.ink" id="6_qaukq"]
+[ext_resource type="Script" path="res://Code/Resources/Character.cs" id="7_qybk7"]
+
+[resource]
+script = ExtResource("7_qybk7")
+Name = "Owlaf"
+Emotions = Array[Texture2D]([ExtResource("3_t7334"), ExtResource("4_7cvyh"), ExtResource("5_3t2c4")])
+Timetable = Array[int]([5, 1, 0])
+Dialogues = Array[Resource]([ExtResource("1_wta75"), ExtResource("2_y08iw"), ExtResource("1_wta75"), ExtResource("1_wta75"), ExtResource("1_wta75"), ExtResource("1_wta75")])
+StalkerDialogues = Array[Resource]([ExtResource("6_qaukq")])

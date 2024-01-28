@@ -65,7 +65,10 @@ public partial class DialogueController : Control
 			if (ActualCharacter == null)
 				GD.PushError("Character couldn't be found in GameController.");
 			else
+			{
 				TXT_Name.Text = ActualCharacter.Name;
+				IMG_Character.Texture = ActualCharacter.Emotions[(int)Character.EEmotions.Neutral];
+			}
 
 			text = text.Remove(from - 1, to + 1 - (from - 1));
 

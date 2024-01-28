@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="Character" load_steps=8 format=3 uid="uid://bkl23hkbbtawf"]
+
+[ext_resource type="Resource" uid="uid://db1po2uoge4ek" path="res://Ink/Test/Test.ink" id="1_xfbtx"]
+[ext_resource type="Resource" uid="uid://g75hf6f27qit" path="res://Ink/Test/Test2.ink" id="2_2gixm"]
+[ext_resource type="Texture2D" uid="uid://cip84yyfcypbq" path="res://Art/Textures/Characters/Azreial/T_Azreial_Neutral.png" id="3_1j45x"]
+[ext_resource type="Texture2D" uid="uid://cx8wr8wjmv1rt" path="res://Art/Textures/Characters/Azreial/T_Azreial_Blush.png" id="4_j2f7k"]
+[ext_resource type="Texture2D" uid="uid://cpt1yod7v220l" path="res://Art/Textures/Characters/Azreial/T_Azreial_Pissed.png" id="5_m24h4"]
+[ext_resource type="Resource" uid="uid://bljefhkdwktsx" path="res://Ink/Test/TestStalker.ink" id="6_61p64"]
+[ext_resource type="Script" path="res://Code/Resources/Character.cs" id="7_5k77o"]
+
+[resource]
+script = ExtResource("7_5k77o")
+Name = "Azreial"
+Emotions = Array[Texture2D]([ExtResource("3_1j45x"), ExtResource("4_j2f7k"), ExtResource("5_m24h4")])
+Timetable = Array[int]([0, 2, 3])
+Dialogues = Array[Resource]([ExtResource("1_xfbtx"), ExtResource("2_2gixm"), ExtResource("1_xfbtx"), ExtResource("1_xfbtx"), ExtResource("1_xfbtx"), ExtResource("1_xfbtx")])
+StalkerDialogues = Array[Resource]([ExtResource("6_61p64")])

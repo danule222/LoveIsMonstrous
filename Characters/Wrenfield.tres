@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="Character" load_steps=8 format=3 uid="uid://cqbg31gb0gekg"]
+
+[ext_resource type="Resource" uid="uid://db1po2uoge4ek" path="res://Ink/Test/Test.ink" id="1_g1tw8"]
+[ext_resource type="Resource" uid="uid://g75hf6f27qit" path="res://Ink/Test/Test2.ink" id="2_n6bmy"]
+[ext_resource type="Texture2D" uid="uid://dq88mxetgl6im" path="res://Art/Textures/Characters/Wrenfield/T_Wrenfield_1.png" id="3_8a7r3"]
+[ext_resource type="Texture2D" uid="uid://dswo20qf0ltmg" path="res://Art/Textures/Characters/Wrenfield/T_Wrenfield_2.png" id="4_mp6u6"]
+[ext_resource type="Texture2D" uid="uid://bmkienf53oyru" path="res://Art/Textures/Characters/Wrenfield/T_Wrenfield_3.png" id="5_0pmcy"]
+[ext_resource type="Resource" uid="uid://bljefhkdwktsx" path="res://Ink/Test/TestStalker.ink" id="6_feo1e"]
+[ext_resource type="Script" path="res://Code/Resources/Character.cs" id="7_7r0bq"]
+
+[resource]
+script = ExtResource("7_7r0bq")
+Name = "Wrenfield"
+Emotions = Array[Texture2D]([ExtResource("3_8a7r3"), ExtResource("4_mp6u6"), ExtResource("5_0pmcy")])
+Timetable = Array[int]([3, 0, 2])
+Dialogues = Array[Resource]([ExtResource("1_g1tw8"), ExtResource("2_n6bmy"), ExtResource("1_g1tw8"), ExtResource("1_g1tw8"), ExtResource("1_g1tw8"), ExtResource("1_g1tw8")])
+StalkerDialogues = Array[Resource]([ExtResource("6_feo1e")])

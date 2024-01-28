@@ -1,16 +1,12 @@
-[gd_scene load_steps=9 format=3 uid="uid://dqu8sk2aovtv3"]
+[gd_scene load_steps=8 format=3 uid="uid://dqu8sk2aovtv3"]
 
 [ext_resource type="Script" path="res://Code/Scripts/UI/MainMenuController.cs" id="1_a63q1"]
 [ext_resource type="Theme" uid="uid://dcckvuo8bsnke" path="res://Resources/UI Styles/UITheme.tres" id="1_de1j5"]
 [ext_resource type="PackedScene" uid="uid://ba0a6ryh0k1rk" path="res://Level/UI/S_SettingsMenu.tscn" id="2_pm36k"]
-[ext_resource type="Shader" path="res://Code/Shaders/Blur.gdshader" id="3_1ufs8"]
-[ext_resource type="Texture2D" uid="uid://ce7vn26xm0o84" path="res://Art/Textures/Backgrounds/T_Classroom_Afternoon.png" id="3_gvwqi"]
+[ext_resource type="Texture2D" uid="uid://coyafvj5t3wn" path="res://Art/Textures/Backgrounds/T_Title_Page.png" id="3_gsypf"]
 [ext_resource type="Texture2D" uid="uid://m1i83ewo0prm" path="res://Art/Textures/Logo/T_Logo.png" id="4_28rrs"]
+[ext_resource type="Texture2D" uid="uid://dygckwlnbbilj" path="res://Art/Textures/UI/T_Board.png" id="5_c1uak"]
 [ext_resource type="AudioStream" uid="uid://dfpmmolk6x18d" path="res://Audio/Music/A_MainMenu.wav" id="7_6gg7k"]
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_6qfcv"]
-shader = ExtResource("3_1ufs8")
-shader_parameter/blur_amount = 2.11
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
@@ -29,17 +25,25 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("3_gvwqi")
+texture = ExtResource("3_gsypf")
 expand_mode = 2
 
-[node name="Blur" type="ColorRect" parent="."]
-material = SubResource("ShaderMaterial_6qfcv")
+[node name="TextureRect2" type="TextureRect" parent="."]
 layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -521.5
+offset_top = -613.5
+offset_right = 521.5
+offset_bottom = 613.5
 grow_horizontal = 2
 grow_vertical = 2
+scale = Vector2(0.513469, 0.513469)
+pivot_offset = Vector2(521, 613)
+texture = ExtResource("5_c1uak")
 
 [node name="Column" type="VBoxContainer" parent="."]
 layout_mode = 1

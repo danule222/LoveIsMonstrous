@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="Character" load_steps=8 format=3 uid="uid://cfqw18c8w1r5d"]
+
+[ext_resource type="Resource" uid="uid://db1po2uoge4ek" path="res://Ink/Test/Test.ink" id="1_hbucb"]
+[ext_resource type="Resource" uid="uid://g75hf6f27qit" path="res://Ink/Test/Test2.ink" id="2_ssnld"]
+[ext_resource type="Texture2D" uid="uid://d36pnclhsouuh" path="res://Art/Textures/Characters/Eyeden/T_Eyeden_Idle.png" id="3_wllde"]
+[ext_resource type="Texture2D" uid="uid://dg15dmg2iylx5" path="res://Art/Textures/Characters/Eyeden/T_Eyeden_Puppy.png" id="4_hen80"]
+[ext_resource type="Texture2D" uid="uid://bpilaokisw8dm" path="res://Art/Textures/Characters/Eyeden/T_Eyeden_Drama_Queen.png" id="5_fvhvu"]
+[ext_resource type="Resource" uid="uid://bljefhkdwktsx" path="res://Ink/Test/TestStalker.ink" id="6_6ad4e"]
+[ext_resource type="Script" path="res://Code/Resources/Character.cs" id="7_enk01"]
+
+[resource]
+script = ExtResource("7_enk01")
+Name = "Eyeden"
+Emotions = Array[Texture2D]([ExtResource("3_wllde"), ExtResource("4_hen80"), ExtResource("5_fvhvu")])
+Timetable = Array[int]([2, 5, 1])
+Dialogues = Array[Resource]([ExtResource("1_hbucb"), ExtResource("2_ssnld"), ExtResource("1_hbucb"), ExtResource("1_hbucb"), ExtResource("1_hbucb"), ExtResource("1_hbucb")])
+StalkerDialogues = Array[Resource]([ExtResource("6_6ad4e")])

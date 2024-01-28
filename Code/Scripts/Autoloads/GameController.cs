@@ -51,7 +51,12 @@ public partial class GameController : Node
 	{
 		// Load characters
 		Characters.Clear();
-		Characters.Add(GD.Load<Character>("res://Characters/TestCharacter.tres"));
+		Characters.Add(GD.Load<Character>("res://Characters/Azreial.tres"));
+		Characters.Add(GD.Load<Character>("res://Characters/Eyeden.tres"));
+		Characters.Add(GD.Load<Character>("res://Characters/Fern.tres"));
+		Characters.Add(GD.Load<Character>("res://Characters/Gourdon.tres"));
+		Characters.Add(GD.Load<Character>("res://Characters/Owlaf.tres"));
+		Characters.Add(GD.Load<Character>("res://Characters/Wrenfield.tres"));
 
 		// Set points
 		Points.Clear();
