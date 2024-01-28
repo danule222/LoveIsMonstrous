@@ -13,6 +13,7 @@ public partial class Character : Resource
   [Export] public Godot.Collections.Array<Texture2D> Emotions { get; set; } // Bruh
   [Export] public Godot.Collections.Array<GameController.ELocation> Timetable { get; set; }
   [Export] public Godot.Collections.Array<InkStory> Dialogues { get; set; }
+  [Export] public Godot.Collections.Array<InkStory> StalkerDialogues { get; set; }
 
   public Character() : this("", null) { }
 

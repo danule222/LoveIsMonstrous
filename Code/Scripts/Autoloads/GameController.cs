@@ -9,8 +9,10 @@ public partial class GameController : Node
 	public enum ELocation { Hallway, Library, Gym, Class, Rooftop, Entrance }
 
 	public List<Character> Characters = new List<Character>();
+	public List<Character> CharactersVisitedToday = new List<Character>(2);
 	public Dictionary<Character, int> Points = new Dictionary<Character, int>();
 	public Dictionary<Character, int> Visits = new Dictionary<Character, int>();
+	public Dictionary<Character, int> Stalkers = new Dictionary<Character, int>();
 	public string PlayerName;
 	public EWeekDay CurrentWeekDay;
 	public EDayPart CurrentDayPart;
@@ -28,10 +30,12 @@ public partial class GameController : Node
 		// Set points
 		Points.Clear();
 		Visits.Clear();
+		Stalkers.Clear();
 		foreach (Character c in Characters)
 		{
 			Points.Add(c, 0);
 			Visits.Add(c, 0);
+			Stalkers.Add(c, 0);
 		}
 
 		PlayerName = "Jeremy Towers";
@@ -75,7 +79,34 @@ public partial class GameController : Node
 		if (c == null) GD.PushError("There's no character assigned to "
 		 														+ location + " at " + CurrentDayPart);
 		else
-			CurrentDialogue = c.Dialogues[Visits[c]];
+		{
+			// Check what dialogue is going to be used
+
+			InkStory inkStory = null;
+
+			if (CurrentDayPart == EDayPart.Afternoon)
+			{
+				if (CharactersVisitedToday[0] == CharactersVisitedToday[1])
+				{
+					int stalkerDialogueIndex = Stalkers[c];
+					if (Stalkers[c] >= c.StalkerDialogues.Count)
+						stalkerDialogueIndex = c.StalkerDialogues.Count - 1;
+
+					inkStory = c.StalkerDialogues[stalkerDialogueIndex];
+					Stalkers[c]++;
+				}
+				else
+					inkStory = c.Dialogues[Visits[c]];
+			}
+			else
+			{
+				CharactersVisitedToday.Add(c);
+				CurrentDialogue = c.Dialogues[Visits[c]];
+			}
+
+			if (inkStory != null)
+				CurrentDialogue = inkStory;
+		}
 
 		GetTree().ChangeSceneToFile("res://Level/Scenes/Dialogue_P.tscn");
 	}
