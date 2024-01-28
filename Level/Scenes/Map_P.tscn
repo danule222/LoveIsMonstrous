@@ -1,9 +1,24 @@
-[gd_scene load_steps=3 format=3 uid="uid://j2hqgl1dpbd0"]
+[gd_scene load_steps=11 format=3 uid="uid://j2hqgl1dpbd0"]
 
 [ext_resource type="Script" path="res://Code/Scripts/UI/MapController.cs" id="1_sjwin"]
 [ext_resource type="PackedScene" uid="uid://ovioe8r4wdyl" path="res://Level/UI/S_PauseMenu.tscn" id="2_cpjqh"]
+[ext_resource type="Texture2D" uid="uid://dcuvf6gc50t73" path="res://Art/Textures/Backgrounds/T_Hallway_Morning.png" id="3_wpms1"]
+[ext_resource type="Shader" path="res://Code/Shaders/Blur.gdshader" id="4_qny2x"]
+[ext_resource type="FontFile" uid="uid://b683r8se6hnrx" path="res://Resources/Fonts/Filxgirl.TTF" id="5_6vtp8"]
+[ext_resource type="Texture2D" uid="uid://bq60hpgs2kcg8" path="res://Art/Textures/UI/T_Map_Full_Screen.png" id="5_oa0bq"]
+[ext_resource type="Texture2D" uid="uid://dygckwlnbbilj" path="res://Art/Textures/UI/T_Board.png" id="5_p0qpc"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_g1se5"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_jfh5i"]
+shader = ExtResource("4_qny2x")
+shader_parameter/blur_amount = 2.11
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1yddl"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
 
 [node name="Map" type="Control"]
+texture_filter = 4
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -12,68 +27,141 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_sjwin")
 
-[node name="BTN_Hallway" type="Button" parent="."]
-layout_mode = 0
-offset_left = 80.0
-offset_top = 17.0
-offset_right = 476.0
-offset_bottom = 338.0
-text = "Hallway"
-flat = true
+[node name="TextureRect" type="TextureRect" parent="."]
+material = SubResource("ShaderMaterial_g1se5")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_wpms1")
+expand_mode = 1
 
-[node name="BTN_Library" type="Button" parent="."]
-layout_mode = 0
-offset_left = 945.0
-offset_top = 45.0
-offset_right = 1247.0
-offset_bottom = 315.0
-text = "Library"
-flat = true
+[node name="Blur" type="ColorRect" parent="."]
+material = SubResource("ShaderMaterial_jfh5i")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 
-[node name="BTN_Gym" type="Button" parent="."]
-layout_mode = 0
-offset_left = 966.0
-offset_top = 422.0
-offset_right = 1235.0
-offset_bottom = 667.0
-text = "Gym"
-flat = true
+[node name="IMG_Board" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -522.5
+offset_top = -656.0
+offset_right = 520.5
+offset_bottom = 656.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.472272, 0.472272)
+pivot_offset = Vector2(521, 656)
+texture = ExtResource("5_p0qpc")
 
-[node name="BTN_Class" type="Button" parent="."]
+[node name="TXT_Time" type="RichTextLabel" parent="IMG_Board"]
 layout_mode = 0
-offset_left = 542.0
-offset_top = 442.0
-offset_right = 854.0
-offset_bottom = 725.0
-text = "Class"
-flat = true
-
-[node name="BTN_Rooftop" type="Button" parent="."]
-layout_mode = 0
-offset_left = 500.0
-offset_top = 55.0
-offset_right = 822.0
-offset_bottom = 335.0
-text = "Rooftop"
-flat = true
-
-[node name="BTN_Entrance" type="Button" parent="."]
-layout_mode = 0
-offset_left = 12.0
-offset_top = 401.0
-offset_right = 419.0
-offset_bottom = 731.0
-text = "Entrance"
-flat = true
-
-[node name="TXT_Time" type="RichTextLabel" parent="."]
-layout_mode = 0
-offset_left = 1163.0
-offset_top = 38.0
-offset_right = 1320.0
-offset_bottom = 74.0
+offset_left = 514.0
+offset_top = 99.0
+offset_right = 948.0
+offset_bottom = 245.0
+theme_override_fonts/normal_font = ExtResource("5_6vtp8")
+theme_override_font_sizes/normal_font_size = 115
 bbcode_enabled = true
-text = "[center]Midday[/center]"
+text = "[right]Midday[/right]"
+
+[node name="IMG_Map" type="TextureRect" parent="IMG_Board"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -506.5
+offset_top = -656.0
+offset_right = 506.5
+offset_bottom = 656.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.6, 0.6)
+pivot_offset = Vector2(506, 656)
+focus_mode = 2
+texture = ExtResource("5_oa0bq")
+
+[node name="BTN_Map" type="Button" parent="IMG_Board/IMG_Map"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_bottom = -41.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_1yddl")
+theme_override_styles/hover = SubResource("StyleBoxFlat_1yddl")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_1yddl")
+theme_override_styles/focus = SubResource("StyleBoxFlat_1yddl")
+flat = true
+
+[node name="Buttons" type="Control" parent="IMG_Board/IMG_Map"]
+visible = false
+anchors_preset = 0
+offset_left = -1899.04
+offset_top = -699.152
+offset_right = -1859.04
+offset_bottom = -659.152
+
+[node name="BTN_Hallway" type="Button" parent="IMG_Board/IMG_Map/Buttons"]
+layout_mode = 0
+offset_left = 2446.0
+offset_top = 1150.0
+offset_right = 2637.0
+offset_bottom = 1535.0
+flat = true
+
+[node name="BTN_Library" type="Button" parent="IMG_Board/IMG_Map/Buttons"]
+layout_mode = 0
+offset_left = 2643.0
+offset_top = 1150.0
+offset_right = 2862.0
+offset_bottom = 1535.0
+flat = true
+
+[node name="BTN_Lockers" type="Button" parent="IMG_Board/IMG_Map/Buttons"]
+layout_mode = 0
+offset_left = 2449.0
+offset_top = 992.0
+offset_right = 2707.0
+offset_bottom = 1147.0
+flat = true
+
+[node name="BTN_Classroom" type="Button" parent="IMG_Board/IMG_Map/Buttons"]
+layout_mode = 0
+offset_left = 2142.0
+offset_top = 1150.0
+offset_right = 2438.0
+offset_bottom = 1383.0
+flat = true
+
+[node name="BTN_Gym" type="Button" parent="IMG_Board/IMG_Map/Buttons"]
+layout_mode = 0
+offset_left = 2089.0
+offset_top = 1454.0
+offset_right = 2354.0
+offset_bottom = 1856.0
+flat = true
+
+[node name="BTN_Roof" type="Button" parent="IMG_Board/IMG_Map/Buttons"]
+layout_mode = 0
+offset_left = 2537.0
+offset_top = 1535.0
+offset_right = 2643.0
+offset_bottom = 1754.0
+flat = true
 
 [node name="PauseMenu" parent="." instance=ExtResource("2_cpjqh")]
 visible = false

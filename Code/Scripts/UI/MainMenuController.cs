@@ -15,10 +15,10 @@ public partial class MainMenuController : Control
 	{
 		GCon = GetNode<GameController>("/root/GameController");
 
-		VBX_Buttons = GetNode<VBoxContainer>("VBX_Buttons");
-		BTN_Play = GetNode<Button>("VBX_Buttons/BTN_Play");
-		BTN_Settings = GetNode<Button>("VBX_Buttons/BTN_Settings");
-		BTN_Exit = GetNode<Button>("VBX_Buttons/BTN_Exit");
+		VBX_Buttons = GetNode<VBoxContainer>("Column");
+		BTN_Play = GetNode<Button>("Column/Buttons/BTN_Play");
+		BTN_Settings = GetNode<Button>("Column/Buttons/BTN_Settings");
+		BTN_Exit = GetNode<Button>("Column/Buttons/BTN_Exit");
 
 		SettingsMenu = GetNode<SettingsController>("SettingsMenu");
 		SettingsMenu.PreviousMenu = VBX_Buttons;

@@ -1,0 +1,15 @@
+[gd_resource type="Theme" load_steps=4 format=3 uid="uid://dcckvuo8bsnke"]
+
+[ext_resource type="StyleBox" uid="uid://cbl510fd2inld" path="res://Resources/UI Styles/Name_Style.tres" id="1_7p3ie"]
+[ext_resource type="FontFile" uid="uid://b683r8se6hnrx" path="res://Resources/Fonts/Filxgirl.TTF" id="1_8jpfb"]
+[ext_resource type="StyleBox" uid="uid://b5h5441swyw55" path="res://Resources/UI Styles/Name_Style_Hover.tres" id="3_f5tdv"]
+
+[resource]
+Button/colors/font_color = Color(1, 1, 1, 1)
+Button/colors/font_hover_color = Color(1, 1, 1, 1)
+Button/font_sizes/font_size = 49
+Button/fonts/font = ExtResource("1_8jpfb")
+Button/styles/focus = ExtResource("1_7p3ie")
+Button/styles/hover = ExtResource("3_f5tdv")
+Button/styles/normal = ExtResource("1_7p3ie")
+Button/styles/pressed = ExtResource("1_7p3ie")

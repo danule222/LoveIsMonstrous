@@ -6,7 +6,7 @@ public partial class GameController : Node
 {
 	public enum EWeekDay { Monday, Tuesday, Wednesday, Thursday, Friday, Saturday }
 	public enum EDayPart { Morning, Midday, Afternoon }
-	public enum ELocation { Hallway, Library, Gym, Class, Rooftop, Entrance }
+	public enum ELocation { Hallway, Library, Gym, Classroom, Roof, Lockers }
 
 	public List<Character> Characters = new List<Character>();
 	public List<Character> CharactersVisitedToday = new List<Character>(2);

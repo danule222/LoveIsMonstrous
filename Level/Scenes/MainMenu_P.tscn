@@ -1,7 +1,15 @@
-[gd_scene load_steps=3 format=3 uid="uid://dqu8sk2aovtv3"]
+[gd_scene load_steps=8 format=3 uid="uid://dqu8sk2aovtv3"]
 
 [ext_resource type="Script" path="res://Code/Scripts/UI/MainMenuController.cs" id="1_a63q1"]
+[ext_resource type="Theme" uid="uid://dcckvuo8bsnke" path="res://Resources/UI Styles/UITheme.tres" id="1_de1j5"]
 [ext_resource type="PackedScene" uid="uid://ba0a6ryh0k1rk" path="res://Level/UI/S_SettingsMenu.tscn" id="2_pm36k"]
+[ext_resource type="Shader" path="res://Code/Shaders/Blur.gdshader" id="3_1ufs8"]
+[ext_resource type="Texture2D" uid="uid://ce7vn26xm0o84" path="res://Art/Textures/Backgrounds/T_Classroom_Afternoon.png" id="3_gvwqi"]
+[ext_resource type="Texture2D" uid="uid://m1i83ewo0prm" path="res://Art/Textures/Logo/T_Logo.png" id="4_28rrs"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_6qfcv"]
+shader = ExtResource("3_1ufs8")
+shader_parameter/blur_amount = 2.11
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
@@ -10,9 +18,29 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme = ExtResource("1_de1j5")
 script = ExtResource("1_a63q1")
 
-[node name="VBX_Buttons" type="VBoxContainer" parent="."]
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_gvwqi")
+expand_mode = 2
+
+[node name="Blur" type="ColorRect" parent="."]
+material = SubResource("ShaderMaterial_6qfcv")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Column" type="VBoxContainer" parent="."]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -20,14 +48,24 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -209.0
-offset_top = -271.0
+offset_top = -235.5
 offset_right = 209.0
-offset_bottom = 271.0
+offset_bottom = 235.5
 grow_horizontal = 2
 grow_vertical = 2
 alignment = 1
 
-[node name="BTN_Play" type="Button" parent="VBX_Buttons"]
+[node name="TextureRect2" type="TextureRect" parent="Column"]
+layout_mode = 2
+texture = ExtResource("4_28rrs")
+expand_mode = 5
+
+[node name="Buttons" type="VBoxContainer" parent="Column"]
+custom_minimum_size = Vector2(219.25, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="BTN_Play" type="Button" parent="Column/Buttons"]
 layout_mode = 2
 focus_neighbor_left = NodePath(".")
 focus_neighbor_top = NodePath("../BTN_Exit")
@@ -37,7 +75,7 @@ focus_next = NodePath("../BTN_Settings")
 focus_previous = NodePath(".")
 text = "Play"
 
-[node name="BTN_Settings" type="Button" parent="VBX_Buttons"]
+[node name="BTN_Settings" type="Button" parent="Column/Buttons"]
 layout_mode = 2
 focus_neighbor_left = NodePath(".")
 focus_neighbor_top = NodePath("../BTN_Play")
@@ -47,7 +85,7 @@ focus_next = NodePath("../BTN_Exit")
 focus_previous = NodePath("../BTN_Play")
 text = "Settings"
 
-[node name="BTN_Exit" type="Button" parent="VBX_Buttons"]
+[node name="BTN_Exit" type="Button" parent="Column/Buttons"]
 layout_mode = 2
 focus_neighbor_left = NodePath(".")
 focus_neighbor_top = NodePath("../BTN_Settings")
