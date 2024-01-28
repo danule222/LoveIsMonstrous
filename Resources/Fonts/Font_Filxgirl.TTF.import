@@ -3,12 +3,12 @@
 importer="font_data_dynamic"
 type="FontFile"
 uid="uid://b683r8se6hnrx"
-path="res://.godot/imported/Filxgirl.TTF-f02dcd2afbde8da2aa334036530eaee3.fontdata"
+path="res://.godot/imported/Font_Filxgirl.TTF-4a26f9266543de9c5656b45fc3b9edd8.fontdata"
 
 [deps]
 
-source_file="res://Resources/Fonts/Filxgirl.TTF"
-dest_files=["res://.godot/imported/Filxgirl.TTF-f02dcd2afbde8da2aa334036530eaee3.fontdata"]
+source_file="res://Resources/Fonts/Font_Filxgirl.TTF"
+dest_files=["res://.godot/imported/Font_Filxgirl.TTF-4a26f9266543de9c5656b45fc3b9edd8.fontdata"]
 
 [params]
 

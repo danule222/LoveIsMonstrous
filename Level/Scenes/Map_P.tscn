@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://ovioe8r4wdyl" path="res://Level/UI/S_PauseMenu.tscn" id="2_cpjqh"]
 [ext_resource type="Texture2D" uid="uid://dcuvf6gc50t73" path="res://Art/Textures/Backgrounds/T_Hallway_Morning.png" id="3_wpms1"]
 [ext_resource type="Shader" path="res://Code/Shaders/Blur.gdshader" id="4_qny2x"]
-[ext_resource type="FontFile" uid="uid://b683r8se6hnrx" path="res://Resources/Fonts/Filxgirl.TTF" id="5_6vtp8"]
+[ext_resource type="FontFile" uid="uid://b683r8se6hnrx" path="res://Resources/Fonts/Font_Filxgirl.TTF" id="5_6vtp8"]
 [ext_resource type="Texture2D" uid="uid://bq60hpgs2kcg8" path="res://Art/Textures/UI/T_Map_Full_Screen.png" id="5_oa0bq"]
 [ext_resource type="Texture2D" uid="uid://dygckwlnbbilj" path="res://Art/Textures/UI/T_Board.png" id="5_p0qpc"]
 

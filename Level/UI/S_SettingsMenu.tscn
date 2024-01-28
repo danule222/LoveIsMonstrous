@@ -1,6 +1,11 @@
-[gd_scene load_steps=2 format=3 uid="uid://ba0a6ryh0k1rk"]
+[gd_scene load_steps=6 format=3 uid="uid://ba0a6ryh0k1rk"]
 
+[ext_resource type="Theme" uid="uid://dcckvuo8bsnke" path="res://Resources/UI Styles/UITheme.tres" id="1_78iu3"]
 [ext_resource type="Script" path="res://Code/Scripts/UI/SettingsController.cs" id="1_a2fuf"]
+[ext_resource type="Texture2D" uid="uid://dygckwlnbbilj" path="res://Art/Textures/UI/T_Board.png" id="2_poh66"]
+[ext_resource type="FontFile" uid="uid://b683r8se6hnrx" path="res://Resources/Fonts/Font_Filxgirl.TTF" id="3_h5f0g"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_eusbw"]
 
 [node name="SettingsMenu" type="Control"]
 layout_mode = 3
@@ -9,6 +14,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme = ExtResource("1_78iu3")
 script = ExtResource("1_a2fuf")
 
 [node name="Panel" type="Panel" parent="."]
@@ -24,6 +30,24 @@ offset_right = 265.0
 offset_bottom = 228.5
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_eusbw")
+
+[node name="TextureRect" type="TextureRect" parent="Panel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -521.5
+offset_top = -613.5
+offset_right = 521.5
+offset_bottom = 613.5
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.513469, 0.513469)
+pivot_offset = Vector2(521, 613)
+texture = ExtResource("2_poh66")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Panel"]
 layout_mode = 1
@@ -74,6 +98,9 @@ custom_minimum_size = Vector2(250, 0)
 layout_mode = 2
 size_flags_horizontal = 10
 size_flags_vertical = 4
+max_value = 1.0
+step = 0.1
+value = 1.0
 
 [node name="BTN_Back" type="Button" parent="Panel"]
 layout_mode = 1
@@ -82,19 +109,21 @@ anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -55.0
-offset_top = -41.0
-offset_right = -10.0
-offset_bottom = -10.0
+offset_left = -192.0
+offset_top = -34.5
+offset_right = -54.0
+offset_bottom = 63.5
 grow_horizontal = 0
 grow_vertical = 0
+scale = Vector2(0.651305, 0.651305)
 text = "Back"
 
 [node name="Label" type="Label" parent="Panel"]
 layout_mode = 0
-offset_left = 18.0
-offset_top = 10.0
-offset_right = 165.0
-offset_bottom = 55.0
-theme_override_font_sizes/font_size = 32
+offset_left = 77.0
+offset_top = -50.5
+offset_right = 244.0
+offset_bottom = 33.5
+theme_override_fonts/font = ExtResource("3_h5f0g")
+theme_override_font_sizes/font_size = 62
 text = "Settings"

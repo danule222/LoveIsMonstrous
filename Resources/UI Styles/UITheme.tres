@@ -1,7 +1,7 @@
 [gd_resource type="Theme" load_steps=4 format=3 uid="uid://dcckvuo8bsnke"]
 
 [ext_resource type="StyleBox" uid="uid://cbl510fd2inld" path="res://Resources/UI Styles/Name_Style.tres" id="1_7p3ie"]
-[ext_resource type="FontFile" uid="uid://b683r8se6hnrx" path="res://Resources/Fonts/Filxgirl.TTF" id="1_8jpfb"]
+[ext_resource type="FontFile" uid="uid://b683r8se6hnrx" path="res://Resources/Fonts/Font_Filxgirl.TTF" id="1_8jpfb"]
 [ext_resource type="StyleBox" uid="uid://b5h5441swyw55" path="res://Resources/UI Styles/Name_Style_Hover.tres" id="3_f5tdv"]
 
 [resource]
