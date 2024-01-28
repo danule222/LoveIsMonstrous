@@ -16,6 +16,10 @@ config/features=PackedStringArray("4.2", "C#", "Mobile")
 boot_splash/show_image=false
 config/icon="res://icon.svg"
 
+[audio]
+
+buses/default_bus_layout="res://Audio/BusLayout.tres"
+
 [autoload]
 
 GameController="*res://Code/Scripts/Autoloads/GameController.cs"
