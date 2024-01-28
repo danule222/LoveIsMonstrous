@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="Character" load_steps=8 format=3 uid="uid://bkl23hkbbtawf"]
 
-[ext_resource type="Resource" uid="uid://d1gapuo3ovdl3" path="res://Ink/Aezrial/Script_Azreial_1.ink" id="1_xd4fn"]
-[ext_resource type="Resource" uid="uid://byf1ggu5rtojm" path="res://Ink/Aezrial/Script_Azreial_2.ink" id="2_yvqjc"]
+[ext_resource type="Resource" uid="uid://d1gapuo3ovdl3" path="res://Ink/Azreial/Script_Azreial_1.ink" id="1_xd4fn"]
+[ext_resource type="Resource" uid="uid://byf1ggu5rtojm" path="res://Ink/Azreial/Script_Azreial_2.ink" id="2_yvqjc"]
 [ext_resource type="Texture2D" uid="uid://cip84yyfcypbq" path="res://Art/Textures/Characters/Azreial/T_Azreial_Neutral.png" id="3_1j45x"]
 [ext_resource type="Texture2D" uid="uid://cx8wr8wjmv1rt" path="res://Art/Textures/Characters/Azreial/T_Azreial_Blush.png" id="4_j2f7k"]
 [ext_resource type="Texture2D" uid="uid://cpt1yod7v220l" path="res://Art/Textures/Characters/Azreial/T_Azreial_Pissed.png" id="5_m24h4"]

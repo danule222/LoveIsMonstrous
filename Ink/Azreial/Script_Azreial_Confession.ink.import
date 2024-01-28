@@ -1,0 +1,16 @@
+[remap]
+
+importer="ink"
+type="Resource"
+uid="uid://cy6ebpvvpgy52"
+path="res://.godot/imported/Script_Azreial_Confession.ink-348fa561bad82e674480b74b0e477f87.res"
+
+[deps]
+
+source_file="res://Ink/Azreial/Script_Azreial_Confession.ink"
+dest_files=["res://.godot/imported/Script_Azreial_Confession.ink-348fa561bad82e674480b74b0e477f87.res"]
+
+[params]
+
+is_main_file=false
+compress=true

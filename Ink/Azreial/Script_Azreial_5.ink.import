@@ -1,0 +1,16 @@
+[remap]
+
+importer="ink"
+type="Resource"
+uid="uid://ches141saxll5"
+path="res://.godot/imported/Script_Azreial_5.ink-c9d21b27f2c884d9a23e07e897440ebb.res"
+
+[deps]
+
+source_file="res://Ink/Azreial/Script_Azreial_5.ink"
+dest_files=["res://.godot/imported/Script_Azreial_5.ink-c9d21b27f2c884d9a23e07e897440ebb.res"]
+
+[params]
+
+is_main_file=false
+compress=true

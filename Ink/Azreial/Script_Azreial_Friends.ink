@@ -1,0 +1,1 @@
+<Azreial>[Neutral]I love hanging out at festivals! Maybe we can make it a group outing?
