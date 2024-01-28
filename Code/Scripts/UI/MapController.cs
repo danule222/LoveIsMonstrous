@@ -13,6 +13,7 @@ public partial class MapController : Control
 	private Button BTN_Lockers;
 	private Button BTN_Map;
 	private RichTextLabel TXT_Time;
+	private RichTextLabel TXT_Day;
 	private TextureRect IMG_Map;
 
 	// Called when the node enters the scene tree for the first time.
@@ -29,6 +30,7 @@ public partial class MapController : Control
 		BTN_Lockers = GetNode<Button>("IMG_Board/IMG_Map/Buttons/BTN_Lockers");
 		BTN_Map = GetNode<Button>("IMG_Board/IMG_Map/BTN_Map");
 		TXT_Time = GetNode<RichTextLabel>("IMG_Board/TXT_Time");
+		TXT_Day = GetNode<RichTextLabel>("IMG_Board/TXT_Day");
 		IMG_Map = GetNode<TextureRect>("IMG_Board/IMG_Map");
 
 		BTN_Hallway.Pressed += delegate { GCon.GoTo(GameController.ELocation.Hallway); };
@@ -53,6 +55,28 @@ public partial class MapController : Control
 				break;
 			case GameController.EDayPart.Afternoon:
 				TXT_Time.Text = "[right]Afternoon[/right]";
+				break;
+		}
+
+		switch (GCon.CurrentWeekDay)
+		{
+			case GameController.EWeekDay.Monday:
+				TXT_Day.Text = "[center]Monday[/center]";
+				break;
+			case GameController.EWeekDay.Tuesday:
+				TXT_Day.Text = "[center]Tuesday[/center]";
+				break;
+			case GameController.EWeekDay.Wednesday:
+				TXT_Day.Text = "[center]Wednesday[/center]";
+				break;
+			case GameController.EWeekDay.Thursday:
+				TXT_Day.Text = "[center]Thursday[/center]";
+				break;
+			case GameController.EWeekDay.Friday:
+				TXT_Day.Text = "[center]Friday[/center]";
+				break;
+			case GameController.EWeekDay.Saturday:
+				TXT_Day.Text = "[center]Saturday[/center]";
 				break;
 		}
 	}

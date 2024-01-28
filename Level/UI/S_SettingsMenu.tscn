@@ -43,6 +43,7 @@ alignment = 1
 [node name="Label" type="Label" parent="Panel/VBoxContainer"]
 custom_minimum_size = Vector2(0, 50)
 layout_mode = 2
+theme_override_font_sizes/font_size = 22
 text = "Audio"
 
 [node name="MusicSlider" type="HBoxContainer" parent="Panel/VBoxContainer"]
@@ -52,11 +53,14 @@ layout_mode = 2
 layout_mode = 2
 text = "Music"
 
-[node name="HSlider" type="HSlider" parent="Panel/VBoxContainer/MusicSlider"]
+[node name="SLI_Music" type="HSlider" parent="Panel/VBoxContainer/MusicSlider"]
 custom_minimum_size = Vector2(250, 0)
 layout_mode = 2
 size_flags_horizontal = 10
 size_flags_vertical = 4
+max_value = 1.0
+step = 0.1
+value = 1.0
 
 [node name="EffectsSlider" type="HBoxContainer" parent="Panel/VBoxContainer"]
 layout_mode = 2
@@ -65,7 +69,7 @@ layout_mode = 2
 layout_mode = 2
 text = "Effects"
 
-[node name="HSlider" type="HSlider" parent="Panel/VBoxContainer/EffectsSlider"]
+[node name="SLI_Effects" type="HSlider" parent="Panel/VBoxContainer/EffectsSlider"]
 custom_minimum_size = Vector2(250, 0)
 layout_mode = 2
 size_flags_horizontal = 10
@@ -88,8 +92,9 @@ text = "Back"
 
 [node name="Label" type="Label" parent="Panel"]
 layout_mode = 0
-offset_left = 10.0
+offset_left = 18.0
 offset_top = 10.0
-offset_right = 157.0
-offset_bottom = 49.0
+offset_right = 165.0
+offset_bottom = 55.0
+theme_override_font_sizes/font_size = 32
 text = "Settings"
