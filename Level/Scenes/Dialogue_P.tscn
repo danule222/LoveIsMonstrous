@@ -1,9 +1,17 @@
-[gd_scene load_steps=6 format=3 uid="uid://br7uujfwyc4bj"]
+[gd_scene load_steps=8 format=3 uid="uid://br7uujfwyc4bj"]
 
 [ext_resource type="Texture2D" uid="uid://te48j5bxp7o2" path="res://Art/Textures/Backgrounds/T_BackgroundTest.jpeg" id="1_nrxgs"]
 [ext_resource type="Script" path="res://Code/Scripts/UI/DialogueController.cs" id="2_xyhxk"]
 [ext_resource type="Texture2D" uid="uid://bl3hbqt6ob1ll" path="res://Art/Textures/Characters/Test/HappyFace.png" id="3_00ur5"]
 [ext_resource type="PackedScene" uid="uid://ovioe8r4wdyl" path="res://Level/UI/S_PauseMenu.tscn" id="4_cuiey"]
+[ext_resource type="Texture2D" uid="uid://dkn5kyx4elo5h" path="res://Art/Textures/UI/T_DialogueBox.png" id="4_tux06"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_doc71"]
+texture = ExtResource("4_tux06")
+texture_margin_left = 154.0
+texture_margin_top = 154.0
+texture_margin_right = 154.0
+texture_margin_bottom = 154.0
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_a1mvp"]
 bg_color = Color(0.192157, 0.192157, 0.192157, 0.639216)
@@ -82,24 +90,28 @@ anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = -305.0
-offset_top = -108.0
-offset_right = 305.0
-offset_bottom = -19.0
+offset_left = -696.0
+offset_top = -332.0
+offset_right = 696.0
+offset_bottom = -18.0
 grow_horizontal = 2
 grow_vertical = 0
+scale = Vector2(0.5, 0.5)
+pivot_offset = Vector2(696, 314)
+theme_override_styles/panel = SubResource("StyleBoxTexture_doc71")
 
 [node name="TXT_Dialogue" type="RichTextLabel" parent="Text"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 10.0
-offset_top = 10.0
-offset_right = -10.0
-offset_bottom = -10.0002
+offset_left = 152.0
+offset_top = 82.0
+offset_right = -184.0
+offset_bottom = -80.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_font_sizes/normal_font_size = 36
 text = "Dialogue"
 
 [node name="Options" type="Panel" parent="."]
