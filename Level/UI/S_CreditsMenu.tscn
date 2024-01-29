@@ -1,0 +1,132 @@
+[gd_scene load_steps=6 format=3 uid="uid://cc5u0n0knnmty"]
+
+[ext_resource type="Theme" uid="uid://dcckvuo8bsnke" path="res://Resources/UI Styles/UITheme.tres" id="1_lux5q"]
+[ext_resource type="Script" path="res://Code/Scripts/UI/CreditsController.cs" id="2_bs0aj"]
+[ext_resource type="Texture2D" uid="uid://dygckwlnbbilj" path="res://Art/Textures/UI/T_Board.png" id="3_5ruxg"]
+[ext_resource type="FontFile" uid="uid://b683r8se6hnrx" path="res://Resources/Fonts/Font_Filxgirl.TTF" id="4_wyb7q"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_eusbw"]
+
+[node name="CreditsMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_lux5q")
+script = ExtResource("2_bs0aj")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -265.0
+offset_top = -228.5
+offset_right = 265.0
+offset_bottom = 228.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_eusbw")
+
+[node name="TextureRect" type="TextureRect" parent="Panel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -521.5
+offset_top = -613.5
+offset_right = 521.5
+offset_bottom = 613.5
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.513469, 0.513469)
+pivot_offset = Vector2(521, 613)
+texture = ExtResource("3_5ruxg")
+
+[node name="BTN_Back" type="Button" parent="Panel"]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -192.0
+offset_top = -34.5
+offset_right = -54.0
+offset_bottom = 63.5
+grow_horizontal = 0
+grow_vertical = 0
+scale = Vector2(0.651305, 0.651305)
+text = "Back"
+
+[node name="Label" type="Label" parent="Panel"]
+layout_mode = 0
+offset_left = 77.0
+offset_top = -50.5
+offset_right = 244.0
+offset_bottom = 33.5
+theme_override_fonts/font = ExtResource("4_wyb7q")
+theme_override_font_sizes/font_size = 62
+text = "Credits"
+
+[node name="Label2" type="Label" parent="Panel"]
+layout_mode = 0
+offset_left = 76.0
+offset_top = 59.5
+offset_right = 458.0
+offset_bottom = 109.5
+theme_override_font_sizes/font_size = 31
+text = "2D Art & Writing"
+
+[node name="Label3" type="Label" parent="Panel"]
+layout_mode = 0
+offset_left = 76.0
+offset_top = 97.5
+offset_right = 458.0
+offset_bottom = 211.5
+theme_override_font_sizes/font_size = 26
+text = "Christina González
+Katie Davis
+Max Ramsey"
+
+[node name="Label4" type="Label" parent="Panel"]
+layout_mode = 0
+offset_left = 76.0
+offset_top = 229.5
+offset_right = 458.0
+offset_bottom = 279.5
+theme_override_font_sizes/font_size = 31
+text = "Music & FX"
+
+[node name="Label5" type="Label" parent="Panel"]
+layout_mode = 0
+offset_left = 76.0
+offset_top = 268.0
+offset_right = 458.0
+offset_bottom = 310.0
+theme_override_font_sizes/font_size = 26
+text = "James Wolf"
+
+[node name="Label6" type="Label" parent="Panel"]
+layout_mode = 0
+offset_left = 76.0
+offset_top = 323.5
+offset_right = 458.0
+offset_bottom = 373.5
+theme_override_font_sizes/font_size = 31
+text = "Programming"
+
+[node name="Label7" type="Label" parent="Panel"]
+layout_mode = 0
+offset_left = 76.0
+offset_top = 362.0
+offset_right = 458.0
+offset_bottom = 404.0
+theme_override_font_sizes/font_size = 26
+text = "Daniel Ramírez"

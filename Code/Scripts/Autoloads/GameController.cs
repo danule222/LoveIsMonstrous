@@ -50,7 +50,7 @@ public partial class GameController : Node
 			Stalkers.Add(c, 0);
 		}
 
-		PlayerName = "Jeremy Towers";
+		PlayerName = "Pat";
 		CurrentWeekDay = EWeekDay.Monday;
 		CurrentDayPart = EDayPart.Morning;
 		CurrentLocation = ELocation.Hallway;
@@ -117,7 +117,7 @@ public partial class GameController : Node
 			Stalkers.Add(c, 0);
 		}
 
-		PlayerName = "Jeremy Towers";
+		PlayerName = "Pat";
 		CurrentWeekDay = EWeekDay.Monday;
 		CurrentDayPart = EDayPart.Morning;
 		CurrentLocation = ELocation.Hallway;

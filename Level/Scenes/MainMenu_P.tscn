@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://dqu8sk2aovtv3"]
+[gd_scene load_steps=8 format=3 uid="uid://dqu8sk2aovtv3"]
 
 [ext_resource type="Script" path="res://Code/Scripts/UI/MainMenuController.cs" id="1_a63q1"]
 [ext_resource type="Theme" uid="uid://dcckvuo8bsnke" path="res://Resources/UI Styles/UITheme.tres" id="1_de1j5"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://coyafvj5t3wn" path="res://Art/Textures/Backgrounds/T_Title_Page.png" id="3_gsypf"]
 [ext_resource type="Texture2D" uid="uid://m1i83ewo0prm" path="res://Art/Textures/Logo/T_Logo.png" id="4_28rrs"]
 [ext_resource type="Texture2D" uid="uid://dygckwlnbbilj" path="res://Art/Textures/UI/T_Board.png" id="5_c1uak"]
+[ext_resource type="PackedScene" uid="uid://cc5u0n0knnmty" path="res://Level/UI/S_CreditsMenu.tscn" id="7_ut85u"]
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
@@ -52,11 +53,13 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -209.0
-offset_top = -235.5
+offset_top = -299.0
 offset_right = 209.0
-offset_bottom = 235.5
+offset_bottom = 299.0
 grow_horizontal = 2
 grow_vertical = 2
+scale = Vector2(0.90121, 0.90121)
+pivot_offset = Vector2(209, 299)
 alignment = 1
 
 [node name="TextureRect2" type="TextureRect" parent="Column"]
@@ -68,37 +71,61 @@ expand_mode = 5
 custom_minimum_size = Vector2(219.25, 0)
 layout_mode = 2
 size_flags_horizontal = 4
+size_flags_vertical = 4
 
 [node name="BTN_Play" type="Button" parent="Column/Buttons"]
 layout_mode = 2
 focus_neighbor_left = NodePath(".")
-focus_neighbor_top = NodePath("../BTN_Exit")
+focus_neighbor_top = NodePath("../VBoxContainer/BTN_Exit")
 focus_neighbor_right = NodePath(".")
-focus_neighbor_bottom = NodePath("../BTN_Settings")
-focus_next = NodePath("../BTN_Settings")
+focus_neighbor_bottom = NodePath("../VBoxContainer/BTN_Settings")
+focus_next = NodePath("../VBoxContainer/BTN_Settings")
 focus_previous = NodePath(".")
 text = "Play"
 
-[node name="BTN_Settings" type="Button" parent="Column/Buttons"]
+[node name="VBoxContainer" type="VBoxContainer" parent="Column/Buttons"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+alignment = 1
+
+[node name="BTN_Settings" type="Button" parent="Column/Buttons/VBoxContainer"]
 layout_mode = 2
 focus_neighbor_left = NodePath(".")
-focus_neighbor_top = NodePath("../BTN_Play")
+focus_neighbor_top = NodePath("../../BTN_Play")
 focus_neighbor_right = NodePath(".")
 focus_neighbor_bottom = NodePath("../BTN_Exit")
 focus_next = NodePath("../BTN_Exit")
-focus_previous = NodePath("../BTN_Play")
+focus_previous = NodePath("../../BTN_Play")
+theme_override_font_sizes/font_size = 36
 text = "Settings"
 
-[node name="BTN_Exit" type="Button" parent="Column/Buttons"]
+[node name="BTN_Credits" type="Button" parent="Column/Buttons/VBoxContainer"]
+layout_mode = 2
+focus_neighbor_left = NodePath(".")
+focus_neighbor_top = NodePath("../../BTN_Play")
+focus_neighbor_right = NodePath(".")
+focus_neighbor_bottom = NodePath("../BTN_Exit")
+focus_next = NodePath("../BTN_Exit")
+focus_previous = NodePath("../../BTN_Play")
+theme_override_font_sizes/font_size = 36
+text = "Credits"
+
+[node name="BTN_Exit" type="Button" parent="Column/Buttons/VBoxContainer"]
 layout_mode = 2
 focus_neighbor_left = NodePath(".")
 focus_neighbor_top = NodePath("../BTN_Settings")
 focus_neighbor_right = NodePath(".")
-focus_neighbor_bottom = NodePath("../BTN_Play")
-focus_next = NodePath("../BTN_Play")
+focus_neighbor_bottom = NodePath("../../BTN_Play")
+focus_next = NodePath("../../BTN_Play")
 focus_previous = NodePath("../BTN_Settings")
+theme_override_font_sizes/font_size = 36
 text = "Exit"
 
 [node name="SettingsMenu" parent="." instance=ExtResource("2_pm36k")]
+visible = false
+layout_mode = 1
+
+[node name="CreditsMenu" parent="." instance=ExtResource("7_ut85u")]
 visible = false
 layout_mode = 1
