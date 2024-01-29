@@ -1,0 +1,16 @@
+[remap]
+
+importer="ink"
+type="Resource"
+uid="uid://itfwkigba8vv"
+path="res://.godot/imported/Script_Eyeden_Confession.ink-05448e81ac9da8f771f34b0c0610edac.res"
+
+[deps]
+
+source_file="res://Ink/Eyeden/Script_Eyeden_Confession.ink"
+dest_files=["res://.godot/imported/Script_Eyeden_Confession.ink-05448e81ac9da8f771f34b0c0610edac.res"]
+
+[params]
+
+is_main_file=true
+compress=true

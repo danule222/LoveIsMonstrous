@@ -1,0 +1,16 @@
+[remap]
+
+importer="ink"
+type="Resource"
+uid="uid://cb2je4ow20sm"
+path="res://.godot/imported/Script_Owlaf_Confession.ink-05b67ae2189a81cd3cc35e90dfc2a8f3.res"
+
+[deps]
+
+source_file="res://Ink/Owlaf/Script_Owlaf_Confession.ink"
+dest_files=["res://.godot/imported/Script_Owlaf_Confession.ink-05b67ae2189a81cd3cc35e90dfc2a8f3.res"]
+
+[params]
+
+is_main_file=true
+compress=true

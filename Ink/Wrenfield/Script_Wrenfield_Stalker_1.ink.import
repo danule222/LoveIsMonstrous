@@ -1,0 +1,16 @@
+[remap]
+
+importer="ink"
+type="Resource"
+uid="uid://b405puagvl6ls"
+path="res://.godot/imported/Script_Wrenfield_Stalker_1.ink-1e6e9c9d726a490420f4ee823cb188be.res"
+
+[deps]
+
+source_file="res://Ink/Wrenfield/Script_Wrenfield_Stalker_1.ink"
+dest_files=["res://.godot/imported/Script_Wrenfield_Stalker_1.ink-1e6e9c9d726a490420f4ee823cb188be.res"]
+
+[params]
+
+is_main_file=true
+compress=true

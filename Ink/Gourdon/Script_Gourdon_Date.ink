@@ -1,0 +1,1 @@
+<Gourdon>A date? With ME! \*caugh\* I mean... Who would not want to. I supose i can manage to free some time.

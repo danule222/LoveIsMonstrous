@@ -1,0 +1,16 @@
+[remap]
+
+importer="ink"
+type="Resource"
+uid="uid://poxvhw2hm2ig"
+path="res://.godot/imported/Script_Wrenfield_Rejection.ink-a93283ca665f38e4f2afd2634789f217.res"
+
+[deps]
+
+source_file="res://Ink/Wrenfield/Script_Wrenfield_Rejection.ink"
+dest_files=["res://.godot/imported/Script_Wrenfield_Rejection.ink-a93283ca665f38e4f2afd2634789f217.res"]
+
+[params]
+
+is_main_file=true
+compress=true

@@ -1,17 +1,24 @@
-[gd_resource type="Resource" script_class="Character" load_steps=8 format=3 uid="uid://bkl23hkbbtawf"]
+[gd_resource type="Resource" script_class="Character" load_steps=15 format=3 uid="uid://bkl23hkbbtawf"]
 
 [ext_resource type="Resource" uid="uid://d1gapuo3ovdl3" path="res://Ink/Azreial/Script_Azreial_1.ink" id="1_xd4fn"]
 [ext_resource type="Resource" uid="uid://byf1ggu5rtojm" path="res://Ink/Azreial/Script_Azreial_2.ink" id="2_yvqjc"]
 [ext_resource type="Texture2D" uid="uid://cip84yyfcypbq" path="res://Art/Textures/Characters/Azreial/T_Azreial_Neutral.png" id="3_1j45x"]
+[ext_resource type="Resource" uid="uid://crjlb4u3pgvrr" path="res://Ink/Azreial/Script_Azreial_3.ink" id="3_1jatd"]
+[ext_resource type="Resource" uid="uid://guyddahhfu83" path="res://Ink/Azreial/Script_Azreial_4.ink" id="4_4s3s8"]
 [ext_resource type="Texture2D" uid="uid://cx8wr8wjmv1rt" path="res://Art/Textures/Characters/Azreial/T_Azreial_Blush.png" id="4_j2f7k"]
+[ext_resource type="Resource" uid="uid://ches141saxll5" path="res://Ink/Azreial/Script_Azreial_5.ink" id="5_grvv2"]
 [ext_resource type="Texture2D" uid="uid://cpt1yod7v220l" path="res://Art/Textures/Characters/Azreial/T_Azreial_Pissed.png" id="5_m24h4"]
-[ext_resource type="Resource" uid="uid://bljefhkdwktsx" path="res://Ink/Test/TestStalker.ink" id="6_61p64"]
+[ext_resource type="Resource" uid="uid://de4qdvinsbx20" path="res://Ink/Azreial/Script_Azreial_6.ink" id="6_idy2p"]
 [ext_resource type="Script" path="res://Code/Resources/Character.cs" id="7_5k77o"]
+[ext_resource type="Resource" uid="uid://dc8jn4m4jnk50" path="res://Ink/Azreial/Script_Azreial_7.ink" id="7_oum84"]
+[ext_resource type="Resource" uid="uid://cjgpsghenvsp3" path="res://Ink/Azreial/Script_Azreial_Stalker_1.ink" id="11_fmace"]
+[ext_resource type="Resource" uid="uid://npl85u54dddy" path="res://Ink/Azreial/Script_Azreial_Stalker_2.ink" id="12_odqev"]
+[ext_resource type="Resource" uid="uid://dlm0rctf8d5m1" path="res://Ink/Azreial/Script_Azreial_Stalker_3.ink" id="13_r7vxo"]
 
 [resource]
 script = ExtResource("7_5k77o")
 Name = "Azreial"
 Emotions = Array[Texture2D]([ExtResource("3_1j45x"), ExtResource("4_j2f7k"), ExtResource("5_m24h4")])
 Timetable = Array[int]([1, 2, 3])
-Dialogues = Array[Resource]([ExtResource("1_xd4fn"), ExtResource("2_yvqjc")])
-StalkerDialogues = Array[Resource]([ExtResource("6_61p64")])
+Dialogues = Array[Resource]([ExtResource("1_xd4fn"), ExtResource("2_yvqjc"), ExtResource("3_1jatd"), ExtResource("4_4s3s8"), ExtResource("5_grvv2"), ExtResource("6_idy2p"), ExtResource("7_oum84")])
+StalkerDialogues = Array[Resource]([ExtResource("11_fmace"), ExtResource("12_odqev"), ExtResource("13_r7vxo")])

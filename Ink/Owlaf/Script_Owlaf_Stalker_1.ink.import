@@ -1,0 +1,16 @@
+[remap]
+
+importer="ink"
+type="Resource"
+uid="uid://srmjf8imvv1p"
+path="res://.godot/imported/Script_Owlaf_Stalker_1.ink-b6a7a35c3fa40bfbb9a787bcdda855f6.res"
+
+[deps]
+
+source_file="res://Ink/Owlaf/Script_Owlaf_Stalker_1.ink"
+dest_files=["res://.godot/imported/Script_Owlaf_Stalker_1.ink-b6a7a35c3fa40bfbb9a787bcdda855f6.res"]
+
+[params]
+
+is_main_file=true
+compress=true

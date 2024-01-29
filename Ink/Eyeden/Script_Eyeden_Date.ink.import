@@ -1,0 +1,16 @@
+[remap]
+
+importer="ink"
+type="Resource"
+uid="uid://dxotw0cfhmc2t"
+path="res://.godot/imported/Script_Eyeden_Date.ink-1637e0cd18550c58d47136932eb97b0a.res"
+
+[deps]
+
+source_file="res://Ink/Eyeden/Script_Eyeden_Date.ink"
+dest_files=["res://.godot/imported/Script_Eyeden_Date.ink-1637e0cd18550c58d47136932eb97b0a.res"]
+
+[params]
+
+is_main_file=true
+compress=true

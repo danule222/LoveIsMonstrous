@@ -1,17 +1,24 @@
-[gd_resource type="Resource" script_class="Character" load_steps=8 format=3 uid="uid://cfqw18c8w1r5d"]
+[gd_resource type="Resource" script_class="Character" load_steps=15 format=3 uid="uid://cfqw18c8w1r5d"]
 
-[ext_resource type="Resource" uid="uid://db1po2uoge4ek" path="res://Ink/Test/Test.ink" id="1_hbucb"]
-[ext_resource type="Resource" uid="uid://g75hf6f27qit" path="res://Ink/Test/Test2.ink" id="2_ssnld"]
+[ext_resource type="Resource" uid="uid://bc3m4yb46uscq" path="res://Ink/Eyeden/Script_Eyeden_1.ink" id="1_mqjso"]
+[ext_resource type="Resource" uid="uid://bjnjp82pqf578" path="res://Ink/Eyeden/Script_Eyeden_2.ink" id="2_qddqv"]
+[ext_resource type="Resource" uid="uid://r8cjobbjhp3h" path="res://Ink/Eyeden/Script_Eyeden_3.ink" id="3_rgcwy"]
 [ext_resource type="Texture2D" uid="uid://d36pnclhsouuh" path="res://Art/Textures/Characters/Eyeden/T_Eyeden_Idle.png" id="3_wllde"]
+[ext_resource type="Resource" uid="uid://c7btt6e0i728q" path="res://Ink/Eyeden/Script_Eyeden_4.ink" id="4_e3hiw"]
 [ext_resource type="Texture2D" uid="uid://dg15dmg2iylx5" path="res://Art/Textures/Characters/Eyeden/T_Eyeden_Puppy.png" id="4_hen80"]
 [ext_resource type="Texture2D" uid="uid://bpilaokisw8dm" path="res://Art/Textures/Characters/Eyeden/T_Eyeden_Drama_Queen.png" id="5_fvhvu"]
-[ext_resource type="Resource" uid="uid://bljefhkdwktsx" path="res://Ink/Test/TestStalker.ink" id="6_6ad4e"]
+[ext_resource type="Resource" uid="uid://m0kwl1dbrtfa" path="res://Ink/Eyeden/Script_Eyeden_5.ink" id="5_kdc5y"]
+[ext_resource type="Resource" uid="uid://da7j5ic8g6pnf" path="res://Ink/Eyeden/Script_Eyeden_6.ink" id="6_fxx8c"]
 [ext_resource type="Script" path="res://Code/Resources/Character.cs" id="7_enk01"]
+[ext_resource type="Resource" uid="uid://bwqgqnixcnc1b" path="res://Ink/Eyeden/Script_Eyeden_7.ink" id="7_us3lj"]
+[ext_resource type="Resource" uid="uid://dbehk1k2kuby8" path="res://Ink/Eyeden/Script_Eyeden_Stalker_1.ink" id="11_f8i1l"]
+[ext_resource type="Resource" uid="uid://bnkbjsmvoensa" path="res://Ink/Eyeden/Script_Eyeden_Stalker_2.ink" id="12_i827f"]
+[ext_resource type="Resource" uid="uid://cb85tq0adyua1" path="res://Ink/Eyeden/Script_Eyeden_Stalker_3.ink" id="13_ble80"]
 
 [resource]
 script = ExtResource("7_enk01")
 Name = "Eyeden"
 Emotions = Array[Texture2D]([ExtResource("3_wllde"), ExtResource("4_hen80"), ExtResource("5_fvhvu")])
 Timetable = Array[int]([2, 5, 1])
-Dialogues = Array[Resource]([ExtResource("1_hbucb"), ExtResource("2_ssnld"), ExtResource("1_hbucb"), ExtResource("1_hbucb"), ExtResource("1_hbucb"), ExtResource("1_hbucb")])
-StalkerDialogues = Array[Resource]([ExtResource("6_6ad4e")])
+Dialogues = Array[Resource]([ExtResource("1_mqjso"), ExtResource("2_qddqv"), ExtResource("3_rgcwy"), ExtResource("4_e3hiw"), ExtResource("5_kdc5y"), ExtResource("6_fxx8c"), ExtResource("7_us3lj")])
+StalkerDialogues = Array[Resource]([ExtResource("11_f8i1l"), ExtResource("12_i827f"), ExtResource("13_ble80")])

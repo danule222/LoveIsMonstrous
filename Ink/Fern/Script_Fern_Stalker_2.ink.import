@@ -1,0 +1,16 @@
+[remap]
+
+importer="ink"
+type="Resource"
+uid="uid://ilcmcxp63lw"
+path="res://.godot/imported/Script_Fern_Stalker_2.ink-df40118f3066c7c986bbcf96ec88f796.res"
+
+[deps]
+
+source_file="res://Ink/Fern/Script_Fern_Stalker_2.ink"
+dest_files=["res://.godot/imported/Script_Fern_Stalker_2.ink-df40118f3066c7c986bbcf96ec88f796.res"]
+
+[params]
+
+is_main_file=true
+compress=true

@@ -1,0 +1,16 @@
+[remap]
+
+importer="ink"
+type="Resource"
+uid="uid://dvtmcolie71ct"
+path="res://.godot/imported/Script_Gourdon_1.ink-8d6ae4ceeb67ed2ba971d4127b27a39a.res"
+
+[deps]
+
+source_file="res://Ink/Gourdon/Script_Gourdon_1.ink"
+dest_files=["res://.godot/imported/Script_Gourdon_1.ink-8d6ae4ceeb67ed2ba971d4127b27a39a.res"]
+
+[params]
+
+is_main_file=true
+compress=true

@@ -1,17 +1,24 @@
-[gd_resource type="Resource" script_class="Character" load_steps=8 format=3 uid="uid://cc7rrqn2hfsl2"]
+[gd_resource type="Resource" script_class="Character" load_steps=15 format=3 uid="uid://cc7rrqn2hfsl2"]
 
-[ext_resource type="Resource" uid="uid://db1po2uoge4ek" path="res://Ink/Test/Test.ink" id="1_w4baf"]
-[ext_resource type="Resource" uid="uid://g75hf6f27qit" path="res://Ink/Test/Test2.ink" id="2_ccsnd"]
+[ext_resource type="Resource" uid="uid://bjuwk4m354cdb" path="res://Ink/Fern/Script_Fern_1.ink" id="1_8gpn6"]
+[ext_resource type="Resource" uid="uid://dxprcdrs72h8w" path="res://Ink/Fern/Script_Fern_2.ink" id="2_3akpx"]
+[ext_resource type="Resource" uid="uid://c1peoa8735uwv" path="res://Ink/Fern/Script_Fern_3.ink" id="3_2pdu2"]
 [ext_resource type="Texture2D" uid="uid://dywerhpjxc6w6" path="res://Art/Textures/Characters/Fern/T_Fern_Neutral.png" id="3_ofkas"]
+[ext_resource type="Resource" uid="uid://cnippdhknw4fe" path="res://Ink/Fern/Script_Fern_4.ink" id="4_6xq4i"]
 [ext_resource type="Texture2D" uid="uid://h2ehjc2srdqk" path="res://Art/Textures/Characters/Fern/T_Fern_Happy.png" id="4_w5qii"]
 [ext_resource type="Texture2D" uid="uid://diq1otcrnlvxs" path="res://Art/Textures/Characters/Fern/T_Fern_Nervous.png" id="5_afsdf"]
-[ext_resource type="Resource" uid="uid://bljefhkdwktsx" path="res://Ink/Test/TestStalker.ink" id="6_daf3q"]
+[ext_resource type="Resource" uid="uid://cgi6te574wqbo" path="res://Ink/Fern/Script_Fern_5.ink" id="5_p7uyf"]
+[ext_resource type="Resource" uid="uid://cv78l8o1nf1i1" path="res://Ink/Fern/Script_Fern_6.ink" id="6_7berd"]
+[ext_resource type="Resource" uid="uid://b1y8fu7p44ihb" path="res://Ink/Fern/Script_Fern_7.ink" id="7_ayw7k"]
 [ext_resource type="Script" path="res://Code/Resources/Character.cs" id="7_jlfge"]
+[ext_resource type="Resource" uid="uid://c7mbm2kjp3sfj" path="res://Ink/Fern/Script_Fern_Stalker_1.ink" id="11_vmxpp"]
+[ext_resource type="Resource" uid="uid://ilcmcxp63lw" path="res://Ink/Fern/Script_Fern_Stalker_2.ink" id="12_nrm1t"]
+[ext_resource type="Resource" uid="uid://bpvfqqlmiukq6" path="res://Ink/Fern/Script_Fern_Stalker_3.ink" id="13_a747p"]
 
 [resource]
 script = ExtResource("7_jlfge")
 Name = "Fern"
 Emotions = Array[Texture2D]([ExtResource("3_ofkas"), ExtResource("4_w5qii"), ExtResource("5_afsdf")])
 Timetable = Array[int]([0, 4, 4])
-Dialogues = Array[Resource]([ExtResource("1_w4baf"), ExtResource("2_ccsnd"), ExtResource("1_w4baf"), ExtResource("1_w4baf"), ExtResource("1_w4baf"), ExtResource("1_w4baf")])
-StalkerDialogues = Array[Resource]([ExtResource("6_daf3q")])
+Dialogues = Array[Resource]([ExtResource("1_8gpn6"), ExtResource("2_3akpx"), ExtResource("3_2pdu2"), ExtResource("4_6xq4i"), ExtResource("5_p7uyf"), ExtResource("6_7berd"), ExtResource("7_ayw7k")])
+StalkerDialogues = Array[Resource]([ExtResource("11_vmxpp"), ExtResource("12_nrm1t"), ExtResource("13_a747p")])

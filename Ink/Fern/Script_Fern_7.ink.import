@@ -1,0 +1,16 @@
+[remap]
+
+importer="ink"
+type="Resource"
+uid="uid://b1y8fu7p44ihb"
+path="res://.godot/imported/Script_Fern_7.ink-deab779c8c92bcfdd5228ee2eb9526e2.res"
+
+[deps]
+
+source_file="res://Ink/Fern/Script_Fern_7.ink"
+dest_files=["res://.godot/imported/Script_Fern_7.ink-deab779c8c92bcfdd5228ee2eb9526e2.res"]
+
+[params]
+
+is_main_file=true
+compress=true

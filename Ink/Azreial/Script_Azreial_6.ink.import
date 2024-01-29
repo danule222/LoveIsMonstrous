@@ -12,5 +12,5 @@ dest_files=["res://.godot/imported/Script_Azreial_6.ink-94b278d67f83fe1f8687e673
 
 [params]
 
-is_main_file=false
+is_main_file=true
 compress=true

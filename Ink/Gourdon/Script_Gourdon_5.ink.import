@@ -1,0 +1,16 @@
+[remap]
+
+importer="ink"
+type="Resource"
+uid="uid://cm7c7j2e7i10f"
+path="res://.godot/imported/Script_Gourdon_5.ink-66cdb32d7da7945a3143f82f52b6b335.res"
+
+[deps]
+
+source_file="res://Ink/Gourdon/Script_Gourdon_5.ink"
+dest_files=["res://.godot/imported/Script_Gourdon_5.ink-66cdb32d7da7945a3143f82f52b6b335.res"]
+
+[params]
+
+is_main_file=true
+compress=true

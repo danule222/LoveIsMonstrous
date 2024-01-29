@@ -1,0 +1,16 @@
+[remap]
+
+importer="ink"
+type="Resource"
+uid="uid://dlm0rctf8d5m1"
+path="res://.godot/imported/Script_Azreial_Stalker_3.ink-728f470706755761a39fd408fb617566.res"
+
+[deps]
+
+source_file="res://Ink/Azreial/Script_Azreial_Stalker_3.ink"
+dest_files=["res://.godot/imported/Script_Azreial_Stalker_3.ink-728f470706755761a39fd408fb617566.res"]
+
+[params]
+
+is_main_file=true
+compress=true

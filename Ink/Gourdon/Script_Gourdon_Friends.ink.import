@@ -1,0 +1,16 @@
+[remap]
+
+importer="ink"
+type="Resource"
+uid="uid://bdu5tlfmgnsjn"
+path="res://.godot/imported/Script_Gourdon_Friends.ink-e0c9594cdbaa6415bedd58dd1a36c7f7.res"
+
+[deps]
+
+source_file="res://Ink/Gourdon/Script_Gourdon_Friends.ink"
+dest_files=["res://.godot/imported/Script_Gourdon_Friends.ink-e0c9594cdbaa6415bedd58dd1a36c7f7.res"]
+
+[params]
+
+is_main_file=true
+compress=true

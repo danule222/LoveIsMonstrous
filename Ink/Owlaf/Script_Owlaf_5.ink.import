@@ -1,0 +1,16 @@
+[remap]
+
+importer="ink"
+type="Resource"
+uid="uid://c10b4rufdxhyl"
+path="res://.godot/imported/Script_Owlaf_5.ink-6b44e0a6cafe05f0112d9bcb31b6bc61.res"
+
+[deps]
+
+source_file="res://Ink/Owlaf/Script_Owlaf_5.ink"
+dest_files=["res://.godot/imported/Script_Owlaf_5.ink-6b44e0a6cafe05f0112d9bcb31b6bc61.res"]
+
+[params]
+
+is_main_file=true
+compress=true

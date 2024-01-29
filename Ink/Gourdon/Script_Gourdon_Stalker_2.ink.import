@@ -1,0 +1,16 @@
+[remap]
+
+importer="ink"
+type="Resource"
+uid="uid://ctjdg8gi66ag5"
+path="res://.godot/imported/Script_Gourdon_Stalker_2.ink-d2f65d6f00c4f312e25f4170dd9bfb92.res"
+
+[deps]
+
+source_file="res://Ink/Gourdon/Script_Gourdon_Stalker_2.ink"
+dest_files=["res://.godot/imported/Script_Gourdon_Stalker_2.ink-d2f65d6f00c4f312e25f4170dd9bfb92.res"]
+
+[params]
+
+is_main_file=true
+compress=true

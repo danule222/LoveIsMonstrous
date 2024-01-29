@@ -1,0 +1,16 @@
+[remap]
+
+importer="ink"
+type="Resource"
+uid="uid://c8dhcojs2xrhh"
+path="res://.godot/imported/Script_Wrenfield_1.ink-1714e20e95ff44a7df25592eac65b6aa.res"
+
+[deps]
+
+source_file="res://Ink/Wrenfield/Script_Wrenfield_1.ink"
+dest_files=["res://.godot/imported/Script_Wrenfield_1.ink-1714e20e95ff44a7df25592eac65b6aa.res"]
+
+[params]
+
+is_main_file=true
+compress=true

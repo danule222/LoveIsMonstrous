@@ -1,0 +1,3 @@
+<Gourdon>I know I know, you like talking to me. But i have things to do.
+* <N>Your good company, of course I like seing you once or twice.
+- [Sad]...

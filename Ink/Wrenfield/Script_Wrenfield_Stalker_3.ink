@@ -1,0 +1,3 @@
+<Gourdon>You should go.
+* <N>(I don’t think he’s happy to see me)
+- ...

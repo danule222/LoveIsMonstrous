@@ -1,0 +1,16 @@
+[remap]
+
+importer="ink"
+type="Resource"
+uid="uid://df3jyeb05jkia"
+path="res://.godot/imported/Script_Gourdon_Rejection.ink-cb703e294bc4b795e1bb853024dc3738.res"
+
+[deps]
+
+source_file="res://Ink/Gourdon/Script_Gourdon_Rejection.ink"
+dest_files=["res://.godot/imported/Script_Gourdon_Rejection.ink-cb703e294bc4b795e1bb853024dc3738.res"]
+
+[params]
+
+is_main_file=true
+compress=true
