@@ -1,0 +1,175 @@
+[gd_scene load_steps=17 format=3 uid="uid://xwov7b1i3rg4"]
+
+[ext_resource type="Theme" uid="uid://dcckvuo8bsnke" path="res://Resources/UI Styles/UITheme.tres" id="1_jmcrv"]
+[ext_resource type="Script" path="res://Code/Scripts/UI/EndingController.cs" id="2_dfskg"]
+[ext_resource type="Texture2D" uid="uid://c8dugmmtsbw06" path="res://Art/Textures/Backgrounds/T_Good_Ending.png" id="3_uaejf"]
+[ext_resource type="Texture2D" uid="uid://dq88mxetgl6im" path="res://Art/Textures/Characters/Wrenfield/T_Wrenfield_1.png" id="4_0800x"]
+[ext_resource type="Texture2D" uid="uid://dro5kl0v2q5wq" path="res://Art/Textures/Backgrounds/T_Sad_Ending.png" id="4_s544v"]
+[ext_resource type="Texture2D" uid="uid://ckg7khig3pugt" path="res://Art/Textures/Backgrounds/T_Dead_Ending.png" id="5_c5010"]
+[ext_resource type="Shader" path="res://Code/Shaders/Blur.gdshader" id="5_nc8og"]
+[ext_resource type="StyleBox" uid="uid://cbl510fd2inld" path="res://Resources/UI Styles/Name_Style.tres" id="6_81oxy"]
+[ext_resource type="Texture2D" uid="uid://d555ir4xko00" path="res://Art/Textures/Backgrounds/T_Festival_Friend_End.png" id="6_j160h"]
+[ext_resource type="Texture2D" uid="uid://dkn5kyx4elo5h" path="res://Art/Textures/UI/T_DialogueBox.png" id="7_n2gyd"]
+[ext_resource type="AudioStream" uid="uid://dhi7ggysktn14" path="res://Audio/Music/A_GoodEndLoop.wav" id="7_p0rib"]
+[ext_resource type="PackedScene" uid="uid://ovioe8r4wdyl" path="res://Level/UI/S_PauseMenu.tscn" id="8_t4yqi"]
+[ext_resource type="AudioStream" uid="uid://cqwogpif6f835" path="res://Audio/Music/A_BadEndLoop.wav" id="8_tboay"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_a1mvp"]
+bg_color = Color(1, 1, 1, 0)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_1fiyi"]
+shader = ExtResource("5_nc8og")
+shader_parameter/blur_amount = 2.11
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_doc71"]
+texture = ExtResource("7_n2gyd")
+texture_margin_left = 154.0
+texture_margin_top = 154.0
+texture_margin_right = 154.0
+texture_margin_bottom = 154.0
+
+[node name="Dialogue" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_jmcrv")
+script = ExtResource("2_dfskg")
+EndBackgrounds = Array[Texture2D]([ExtResource("3_uaejf"), ExtResource("6_j160h"), ExtResource("4_s544v"), ExtResource("5_c5010")])
+EndMusic = Array[AudioStream]([ExtResource("7_p0rib"), ExtResource("8_tboay")])
+
+[node name="Ratio" type="AspectRatioContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+ratio = 1.779
+
+[node name="IMG_Background" type="TextureRect" parent="Ratio"]
+layout_mode = 2
+texture = ExtResource("3_uaejf")
+expand_mode = 2
+stretch_mode = 6
+
+[node name="IMG_Character" type="TextureRect" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -19.0
+offset_bottom = 11.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("4_0800x")
+expand_mode = 2
+stretch_mode = 6
+
+[node name="Options" type="Panel" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_a1mvp")
+
+[node name="Blur" type="ColorRect" parent="Options"]
+material = SubResource("ShaderMaterial_1fiyi")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Options"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -150.0
+offset_top = -250.0
+offset_right = 150.0
+offset_bottom = 250.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 5
+alignment = 1
+
+[node name="Name" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -293.0
+offset_top = -191.0
+offset_right = 109.0
+offset_bottom = -101.0
+grow_horizontal = 2
+grow_vertical = 0
+scale = Vector2(0.5, 0.5)
+theme_override_styles/panel = ExtResource("6_81oxy")
+
+[node name="TXT_Name" type="RichTextLabel" parent="Name"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 42.0
+offset_top = 20.0
+offset_right = -36.0
+offset_bottom = -18.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/normal_font_size = 33
+text = "Name"
+scroll_active = false
+
+[node name="Text" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -696.0
+offset_top = -332.0
+offset_right = 696.0
+offset_bottom = -18.0
+grow_horizontal = 2
+grow_vertical = 0
+scale = Vector2(0.5, 0.5)
+pivot_offset = Vector2(696, 314)
+theme_override_styles/panel = SubResource("StyleBoxTexture_doc71")
+
+[node name="TXT_Dialogue" type="RichTextLabel" parent="Text"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 152.0
+offset_top = 68.0
+offset_right = -184.0
+offset_bottom = -68.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/normal_font_size = 40
+text = "Dialogue"
+scroll_active = false
+
+[node name="PauseMenu" parent="." instance=ExtResource("8_t4yqi")]
+visible = false
+layout_mode = 1
+
+[node name="BackgroundMusic" type="AudioStreamPlayer" parent="."]
+bus = &"Music"

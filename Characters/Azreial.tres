@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="Character" load_steps=15 format=3 uid="uid://bkl23hkbbtawf"]
+[gd_resource type="Resource" script_class="Character" load_steps=19 format=3 uid="uid://bkl23hkbbtawf"]
 
 [ext_resource type="Resource" uid="uid://d1gapuo3ovdl3" path="res://Ink/Azreial/Script_Azreial_1.ink" id="1_xd4fn"]
 [ext_resource type="Resource" uid="uid://byf1ggu5rtojm" path="res://Ink/Azreial/Script_Azreial_2.ink" id="2_yvqjc"]
@@ -11,9 +11,13 @@
 [ext_resource type="Resource" uid="uid://de4qdvinsbx20" path="res://Ink/Azreial/Script_Azreial_6.ink" id="6_idy2p"]
 [ext_resource type="Script" path="res://Code/Resources/Character.cs" id="7_5k77o"]
 [ext_resource type="Resource" uid="uid://dc8jn4m4jnk50" path="res://Ink/Azreial/Script_Azreial_7.ink" id="7_oum84"]
+[ext_resource type="Resource" uid="uid://cy6ebpvvpgy52" path="res://Ink/Azreial/Script_Azreial_Confession.ink" id="11_e51ot"]
 [ext_resource type="Resource" uid="uid://cjgpsghenvsp3" path="res://Ink/Azreial/Script_Azreial_Stalker_1.ink" id="11_fmace"]
+[ext_resource type="Resource" uid="uid://e0att2sa13ya" path="res://Ink/Azreial/Script_Azreial_Date.ink" id="12_57jb5"]
 [ext_resource type="Resource" uid="uid://npl85u54dddy" path="res://Ink/Azreial/Script_Azreial_Stalker_2.ink" id="12_odqev"]
+[ext_resource type="Resource" uid="uid://4dn1d24ofnpy" path="res://Ink/Azreial/Script_Azreial_Friends.ink" id="13_dvsan"]
 [ext_resource type="Resource" uid="uid://dlm0rctf8d5m1" path="res://Ink/Azreial/Script_Azreial_Stalker_3.ink" id="13_r7vxo"]
+[ext_resource type="Resource" uid="uid://bjfy4wkktpcnr" path="res://Ink/Azreial/Script_Azreial_Rejection.ink" id="14_abxxw"]
 
 [resource]
 script = ExtResource("7_5k77o")
@@ -22,3 +26,4 @@ Emotions = Array[Texture2D]([ExtResource("3_1j45x"), ExtResource("4_j2f7k"), Ext
 Timetable = Array[int]([1, 2, 3])
 Dialogues = Array[Resource]([ExtResource("1_xd4fn"), ExtResource("2_yvqjc"), ExtResource("3_1jatd"), ExtResource("4_4s3s8"), ExtResource("5_grvv2"), ExtResource("6_idy2p"), ExtResource("7_oum84")])
 StalkerDialogues = Array[Resource]([ExtResource("11_fmace"), ExtResource("12_odqev"), ExtResource("13_r7vxo")])
+EndGameDialogues = Array[Resource]([ExtResource("11_e51ot"), ExtResource("12_57jb5"), ExtResource("13_dvsan"), ExtResource("14_abxxw")])

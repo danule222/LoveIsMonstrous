@@ -106,5 +106,4 @@ layout_mode = 1
 
 [node name="BackgroundMusic" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("7_6gg7k")
-autoplay = true
 bus = &"Music"

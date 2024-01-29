@@ -1,15 +1,18 @@
 using Godot;
 using GodotInk;
 using System.Collections.Generic;
+using System.Collections.Specialized;
 
 public partial class GameController : Node
 {
 	public enum EWeekDay { Monday, Tuesday, Wednesday, Thursday, Friday, Saturday }
 	public enum EDayPart { Morning, Midday, Afternoon }
 	public enum ELocation { Hallway, Library, Gym, Classroom, Rooftop, Lockers }
+	public enum EEndGame { Lover, Friend, Solo, Stalker }
 
 	public List<Character> Characters = new List<Character>();
 	public List<Character> CharactersVisitedToday = new List<Character>(2);
+	public List<Character> EndGameCharacters = new List<Character>();
 	public Dictionary<Character, int> Points = new Dictionary<Character, int>();
 	public Dictionary<Character, int> Visits = new Dictionary<Character, int>();
 	public Dictionary<Character, int> Stalkers = new Dictionary<Character, int>();
@@ -19,6 +22,7 @@ public partial class GameController : Node
 	public EWeekDay CurrentWeekDay;
 	public EDayPart CurrentDayPart;
 	public ELocation CurrentLocation;
+	public EEndGame EndType;
 	public InkStory CurrentDialogue;
 	public bool IsGamePaused;
 
@@ -198,9 +202,50 @@ public partial class GameController : Node
 		if (nextDay)
 		{
 			if ((int)CurrentWeekDay + 1 >= (int)EWeekDay.Saturday)
-				GD.Print("EndGame");
+			{
+				CurrentWeekDay++;
+				EndGame();
+			}
 			else
 				CurrentWeekDay++;
 		}
+	}
+
+	private void EndGame()
+	{
+		List<Character> toRomance = new List<Character>();
+		List<Character> toFriend = new List<Character>();
+
+		foreach (var item in Points)
+		{
+			if (item.Value > 7)
+			{
+				toRomance.Add(item.Key);
+				continue;
+			}
+			else if (item.Value > 4)
+			{
+				toFriend.Add(item.Key);
+				continue;
+			}
+		}
+
+		// Choose ending
+		if (toRomance.Count == 0 && toFriend.Count == 0)
+		{
+			EndType = EEndGame.Solo;
+		}
+		else if (toRomance.Count > 0)
+		{
+			EndType = EEndGame.Lover;
+			EndGameCharacters.AddRange(toRomance);
+		}
+		else
+		{
+			EndType = EEndGame.Friend;
+			EndGameCharacters.AddRange(toFriend);
+		}
+
+		GetTree().ChangeSceneToFile("res://Level/Scenes/EndDialogue_P.tscn");
 	}
 }

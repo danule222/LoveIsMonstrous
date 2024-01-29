@@ -14,6 +14,7 @@ public partial class Character : Resource
   [Export] public Godot.Collections.Array<GameController.ELocation> Timetable { get; set; }
   [Export] public Godot.Collections.Array<InkStory> Dialogues { get; set; }
   [Export] public Godot.Collections.Array<InkStory> StalkerDialogues { get; set; }
+  [Export] public Godot.Collections.Array<InkStory> EndGameDialogues { get; set; }
 
   public Character() : this("", null) { }
 

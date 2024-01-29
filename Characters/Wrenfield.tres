@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="Character" load_steps=14 format=3 uid="uid://cqbg31gb0gekg"]
+[gd_resource type="Resource" script_class="Character" load_steps=18 format=3 uid="uid://cqbg31gb0gekg"]
 
 [ext_resource type="Resource" uid="uid://c8dhcojs2xrhh" path="res://Ink/Wrenfield/Script_Wrenfield_1.ink" id="1_6chr1"]
 [ext_resource type="Resource" uid="uid://dv1yxwil221k3" path="res://Ink/Wrenfield/Script_Wrenfield_2.ink" id="2_v0yca"]
@@ -10,9 +10,13 @@
 [ext_resource type="Resource" uid="uid://yeeb0emp774p" path="res://Ink/Wrenfield/Script_Wrenfield_5.ink" id="5_ftjno"]
 [ext_resource type="Resource" uid="uid://dlntyqoambol6" path="res://Ink/Wrenfield/Script_Wrenfield_6.ink" id="6_rrfrk"]
 [ext_resource type="Script" path="res://Code/Resources/Character.cs" id="7_7r0bq"]
+[ext_resource type="Resource" uid="uid://ojgbpcqko58v" path="res://Ink/Wrenfield/Script_Wrenfield_Confession.ink" id="10_lcnpe"]
 [ext_resource type="Resource" uid="uid://b405puagvl6ls" path="res://Ink/Wrenfield/Script_Wrenfield_Stalker_1.ink" id="10_vdpes"]
+[ext_resource type="Resource" uid="uid://bsnllceowmywf" path="res://Ink/Wrenfield/Script_Wrenfield_Date.ink" id="11_uff63"]
 [ext_resource type="Resource" uid="uid://cuvg0dto6haw7" path="res://Ink/Wrenfield/Script_Wrenfield_Stalker_2.ink" id="11_x6h68"]
+[ext_resource type="Resource" uid="uid://dkyjuqp4j1ujo" path="res://Ink/Wrenfield/Script_Wrenfield_Friends.ink" id="12_e0kp6"]
 [ext_resource type="Resource" uid="uid://d2f3dn4boxctt" path="res://Ink/Wrenfield/Script_Wrenfield_Stalker_3.ink" id="12_w4o3u"]
+[ext_resource type="Resource" uid="uid://poxvhw2hm2ig" path="res://Ink/Wrenfield/Script_Wrenfield_Rejection.ink" id="13_7tb4k"]
 
 [resource]
 script = ExtResource("7_7r0bq")
@@ -21,3 +25,4 @@ Emotions = Array[Texture2D]([ExtResource("3_8a7r3"), ExtResource("4_mp6u6"), Ext
 Timetable = Array[int]([3, 0, 2])
 Dialogues = Array[Resource]([ExtResource("1_6chr1"), ExtResource("2_v0yca"), ExtResource("3_a1v5q"), ExtResource("4_foky0"), ExtResource("5_ftjno"), ExtResource("6_rrfrk")])
 StalkerDialogues = Array[Resource]([ExtResource("10_vdpes"), ExtResource("11_x6h68"), ExtResource("12_w4o3u")])
+EndGameDialogues = Array[Resource]([ExtResource("10_lcnpe"), ExtResource("11_uff63"), ExtResource("12_e0kp6"), ExtResource("13_7tb4k")])

@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="Character" load_steps=15 format=3 uid="uid://cfqw18c8w1r5d"]
+[gd_resource type="Resource" script_class="Character" load_steps=19 format=3 uid="uid://cfqw18c8w1r5d"]
 
 [ext_resource type="Resource" uid="uid://bc3m4yb46uscq" path="res://Ink/Eyeden/Script_Eyeden_1.ink" id="1_mqjso"]
 [ext_resource type="Resource" uid="uid://bjnjp82pqf578" path="res://Ink/Eyeden/Script_Eyeden_2.ink" id="2_qddqv"]
@@ -11,9 +11,13 @@
 [ext_resource type="Resource" uid="uid://da7j5ic8g6pnf" path="res://Ink/Eyeden/Script_Eyeden_6.ink" id="6_fxx8c"]
 [ext_resource type="Script" path="res://Code/Resources/Character.cs" id="7_enk01"]
 [ext_resource type="Resource" uid="uid://bwqgqnixcnc1b" path="res://Ink/Eyeden/Script_Eyeden_7.ink" id="7_us3lj"]
+[ext_resource type="Resource" uid="uid://itfwkigba8vv" path="res://Ink/Eyeden/Script_Eyeden_Confession.ink" id="11_4ahaf"]
 [ext_resource type="Resource" uid="uid://dbehk1k2kuby8" path="res://Ink/Eyeden/Script_Eyeden_Stalker_1.ink" id="11_f8i1l"]
+[ext_resource type="Resource" uid="uid://dxotw0cfhmc2t" path="res://Ink/Eyeden/Script_Eyeden_Date.ink" id="12_003px"]
 [ext_resource type="Resource" uid="uid://bnkbjsmvoensa" path="res://Ink/Eyeden/Script_Eyeden_Stalker_2.ink" id="12_i827f"]
+[ext_resource type="Resource" uid="uid://bvhh372658kbt" path="res://Ink/Eyeden/Script_Eyeden_Friends.ink" id="13_1fae0"]
 [ext_resource type="Resource" uid="uid://cb85tq0adyua1" path="res://Ink/Eyeden/Script_Eyeden_Stalker_3.ink" id="13_ble80"]
+[ext_resource type="Resource" uid="uid://d3ijqteppd25a" path="res://Ink/Eyeden/Script_Eyeden_Rejection.ink" id="14_qtg46"]
 
 [resource]
 script = ExtResource("7_enk01")
@@ -22,3 +26,4 @@ Emotions = Array[Texture2D]([ExtResource("3_wllde"), ExtResource("4_hen80"), Ext
 Timetable = Array[int]([2, 5, 1])
 Dialogues = Array[Resource]([ExtResource("1_mqjso"), ExtResource("2_qddqv"), ExtResource("3_rgcwy"), ExtResource("4_e3hiw"), ExtResource("5_kdc5y"), ExtResource("6_fxx8c"), ExtResource("7_us3lj")])
 StalkerDialogues = Array[Resource]([ExtResource("11_f8i1l"), ExtResource("12_i827f"), ExtResource("13_ble80")])
+EndGameDialogues = Array[Resource]([ExtResource("11_4ahaf"), ExtResource("12_003px"), ExtResource("13_1fae0"), ExtResource("14_qtg46")])
