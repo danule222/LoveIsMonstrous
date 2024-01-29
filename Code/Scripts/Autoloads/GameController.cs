@@ -25,6 +25,7 @@ public partial class GameController : Node
 	public EEndGame EndType;
 	public InkStory CurrentDialogue;
 	public bool IsGamePaused;
+	public AudioStreamPlayer MusicPlayer;
 
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
@@ -81,6 +82,13 @@ public partial class GameController : Node
 			ELocation.Lockers,
 			new List<Texture2D>() { GD.Load<Texture2D>(backPath + "T_Lockers_Morning.png"), GD.Load<Texture2D>(backPath + "T_Lockers_Afternoon.png") }
 		);
+
+		// Game music
+		MusicPlayer = new AudioStreamPlayer
+		{
+			Bus = "Music"
+		};
+		AddChild(MusicPlayer);
 
 		IsGamePaused = false;
 	}
@@ -143,6 +151,8 @@ public partial class GameController : Node
 		);
 
 		IsGamePaused = false;
+		MusicPlayer.Stream = GD.Load<AudioStream>("res://Audio/Music/A_DayToDayWithMelodyLoop.wav");
+		MusicPlayer.Play();
 
 		GetTree().ChangeSceneToFile("res://Level/Scenes/Map_P.tscn");
 	}
@@ -208,6 +218,12 @@ public partial class GameController : Node
 			}
 			else
 				CurrentWeekDay++;
+		}
+
+		if (CurrentWeekDay == EWeekDay.Wednesday && CurrentDayPart == EDayPart.Morning)
+		{
+			MusicPlayer.Stream = GD.Load<AudioStream>("res://Audio/Music/A_DayToDay2.wav");
+			MusicPlayer.Play();
 		}
 	}
 

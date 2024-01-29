@@ -15,16 +15,16 @@ public partial class SettingsController : Control
 		SLI_Effects = GetNode<Slider>("Panel/VBoxContainer/EffectsSlider/SLI_Effects");
 		BTN_Back = GetNode<Button>("Panel/BTN_Back");
 
+		SLI_Music.Value = DecibelToLinear(AudioServer.GetBusVolumeDb(1));
 		SLI_Music.ValueChanged += delegate
 		{
 			AudioServer.SetBusVolumeDb(1, LinearToDecibel((float)SLI_Music.Value));
 		};
-		SLI_Music.Value = DecibelToLinear(AudioServer.GetBusVolumeDb(1));
+		SLI_Effects.Value = DecibelToLinear(AudioServer.GetBusVolumeDb(2));
 		SLI_Effects.ValueChanged += delegate
 		{
 			AudioServer.SetBusVolumeDb(2, LinearToDecibel((float)SLI_Effects.Value));
 		};
-		SLI_Effects.Value = DecibelToLinear(AudioServer.GetBusVolumeDb(2));
 
 		BTN_Back.Pressed += delegate { GoBack(); };
 	}

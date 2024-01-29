@@ -170,6 +170,3 @@ scroll_active = false
 [node name="PauseMenu" parent="." instance=ExtResource("8_t4yqi")]
 visible = false
 layout_mode = 1
-
-[node name="BackgroundMusic" type="AudioStreamPlayer" parent="."]
-bus = &"Music"

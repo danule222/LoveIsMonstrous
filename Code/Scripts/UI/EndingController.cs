@@ -13,7 +13,6 @@ public partial class EndingController : Control
   private TextureRect IMG_Background;
   private Character ActualCharacter;
   private InkStory ActualDialogue;
-  private AudioStreamPlayer AudioPlayer;
 
   [Export] public Godot.Collections.Array<Texture2D> EndBackgrounds;
   [Export] public Godot.Collections.Array<AudioStream> EndMusic;
@@ -22,18 +21,12 @@ public partial class EndingController : Control
   {
     GCon = GetNode<GameController>("/root/GameController");
 
-    // TODO: Remove test
-    GCon.EndGameCharacters.Add(GD.Load<Character>("res://Characters/Eyeden.tres"));
-    GCon.EndGameCharacters.Add(GD.Load<Character>("res://Characters/Azreial.tres"));
-    GCon.EndType = GameController.EEndGame.Lover;
-
     TXT_Dial = GetNode<RichTextLabel>("Text/TXT_Dialogue");
     TXT_Name = GetNode<RichTextLabel>("Name/TXT_Name");
     VBX_Opts = GetNode<VBoxContainer>("Options/VBoxContainer");
     PNL_Opts = GetNode<Panel>("Options");
     IMG_Character = GetNode<TextureRect>("IMG_Character");
     IMG_Background = GetNode<TextureRect>("Ratio/IMG_Background");
-    AudioPlayer = GetNode<AudioStreamPlayer>("BackgroundMusic");
 
     // Check end
     switch (GCon.EndType)
@@ -41,27 +34,27 @@ public partial class EndingController : Control
       case GameController.EEndGame.Lover:
         IMG_Background.Texture = EndBackgrounds[0];
         TXT_Dial.Text = "Select who you want to spend a special evening with.";
-        AudioPlayer.Stream = EndMusic[0];
+        GCon.MusicPlayer.Stream = EndMusic[0];
         break;
       case GameController.EEndGame.Friend:
         IMG_Background.Texture = EndBackgrounds[1];
         TXT_Dial.Text = "Select who you want to have fun with.";
-        AudioPlayer.Stream = EndMusic[0];
+        GCon.MusicPlayer.Stream = EndMusic[0];
         break;
       case GameController.EEndGame.Solo:
         IMG_Background.Texture = EndBackgrounds[2];
         TXT_Dial.Text = "Our protagonist was unable to make friends with any of his " +
           "companions and was left alone at home, watching the fireworks from the solitude of his house. FIN";
-        AudioPlayer.Stream = EndMusic[1];
+        GCon.MusicPlayer.Stream = EndMusic[1];
         break;
       case GameController.EEndGame.Stalker:
         IMG_Background.Texture = EndBackgrounds[3];
         TXT_Dial.Text = "Our protagonist, after stalking one of his colleagues, got what he deserved. FIN.";
-        AudioPlayer.Stream = EndMusic[1];
+        GCon.MusicPlayer.Stream = EndMusic[1];
         break;
     }
     TXT_Name.Text = "";
-    AudioPlayer.Play();
+    GCon.MusicPlayer.Play();
 
     // Add character options
     if (GCon.EndType != GameController.EEndGame.Solo

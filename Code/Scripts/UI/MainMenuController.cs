@@ -26,6 +26,9 @@ public partial class MainMenuController : Control
 		BTN_Play.Pressed += delegate { ClickedPlay(); };
 		BTN_Settings.Pressed += delegate { ClickedSettings(); };
 		BTN_Exit.Pressed += delegate { ClickedExit(); };
+
+		GCon.MusicPlayer.Stream = GD.Load<AudioStream>("res://Audio/Music/A_MainMenu.wav");
+		GCon.MusicPlayer.Play();
 	}
 
 	private void ClickedPlay()
