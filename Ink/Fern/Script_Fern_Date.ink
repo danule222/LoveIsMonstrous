@@ -1,1 +1,1 @@
-<Fern>I’d love to! Do you can to cycle there together?
+<Fern>I'd love to! Do you can to cycle there together?

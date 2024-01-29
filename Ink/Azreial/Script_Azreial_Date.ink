@@ -1,1 +1,1 @@
-<Azreial>[Happy]Yes! I knew you’d ask hehe.
+<Azreial>[Happy]Yes! I knew you'd ask hehe.

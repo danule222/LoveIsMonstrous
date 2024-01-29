@@ -1,6 +1,6 @@
 <Gourdon>You again? Strange, but if this is going to be a regular ocurance you should adress me properly by Gourdon from now on.
 * <N>Gourdon?
-- Yes? It’s not that strange. You should try to pronounce the owl guys name. I still get it wrong.
+- Yes? It's not that strange. You should try to pronounce the owl guys name. I still get it wrong.
 * <G>Sorry.
 [Neutral]You deffenetly should
 * <B>Oh nothing, you just caught me off gourd with that one.

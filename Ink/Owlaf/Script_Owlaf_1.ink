@@ -1,7 +1,7 @@
 <Owlaf>Woah!
 - [Sad]Oh Pardon me.
 - I often forget myself while reading. Are you alright? 
-* <N>No it’s-I’m fine. Really.
+* <N>No it's-I'm fine. Really.
 - [Neutral]So you say. Forgive my late introduction, I am Owlaf.
 * <N>You always walk backwards when you read?
 - I was walking forward, only my head twisted round with knowledge.

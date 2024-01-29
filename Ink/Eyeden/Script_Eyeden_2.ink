@@ -1,7 +1,7 @@
 <Eyeden>Hey! If it isn't the little ramster.
 * <N> Ramster?
 - Not important. Have you seen my little lunch rat around here?
-- Small, kinda greenish, don’t ask why, and eyes looking kinda funny into oposite directions?
+- Small, kinda greenish, don't ask why, and eyes looking kinda funny into oposite directions?
 * <G>/(Did he say lunch rat?)
 [Happy]Oh come on! Lunch Rat, sweet delicious little creature?
 * <N>Why is the rat green?

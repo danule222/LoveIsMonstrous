@@ -1,3 +1,3 @@
-<Wrenfield>Oh hey, what’s up?
+<Wrenfield>Oh hey, what's up?
 * <N>Lets hang out.
-- I’m good for today.
+- I'm good for today.

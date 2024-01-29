@@ -1,1 +1,1 @@
-<Gourdon>Sounds like fun! Man, I love festivals, I’ve never been with a friend.
+<Gourdon>Sounds like fun! Man, I love festivals, I've never been with a friend.
